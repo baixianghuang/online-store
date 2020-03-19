@@ -1,0 +1,6 @@
+2020-03-19 19:13:55.876 [main] DEBUG com.store.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2020-03-19 19:13:55.966 [main] DEBUG com.store.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2020-03-19 19:13:55.989 [main] DEBUG com.store.dao.ShopCategoryDao.queryShopCategory - <==      Total: 1
+2020-03-19 19:16:22.287 [main] DEBUG com.store.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2020-03-19 19:16:22.331 [main] DEBUG com.store.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2020-03-19 19:16:22.350 [main] DEBUG com.store.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2

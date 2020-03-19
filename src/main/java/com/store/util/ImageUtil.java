@@ -9,6 +9,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
@@ -31,16 +32,16 @@ public class ImageUtil {
         return newFile;
     }
 
-    public static String generateThumbNail(File thumbnail, String targetPath) {
+    public static String generateThumbNail(InputStream thumbnailInputStream, String fileName, String targetPath) {
         String realFileName = getRandomFileName();
-        String extension = getFileExtension(thumbnail);
+        String extension = getFileExtension(fileName);
         makeDirPath(targetPath);
         String relativePath = targetPath + realFileName + extension;
         logger.debug("Relative path is: " + relativePath);
         File dest = new File(PathUtil.getImgBasePath() + relativePath);
         logger.debug("Complete path is: " + PathUtil.getImgBasePath() + relativePath);
         try {
-            Thumbnails.of(thumbnail).size(200, 200).watermark(Positions.BOTTOM_RIGHT,
+            Thumbnails.of(thumbnailInputStream).size(200, 200).watermark(Positions.BOTTOM_RIGHT,
                     ImageIO.read(new File(basePath+"/watermark.jpg")), 0.25f).
                     outputQuality(0.8f).toFile(dest);
         } catch (IOException e) {
@@ -50,8 +51,7 @@ public class ImageUtil {
         return relativePath;
     }
 
-    private static String getFileExtension(File cFile) {
-        String fileName = cFile.getName();
+    private static String getFileExtension(String fileName) {
         int index = fileName.lastIndexOf(".");
         return fileName.substring(index);
     }
@@ -72,7 +72,7 @@ public class ImageUtil {
      *
      * @return a String comprised of current + 5-digit random number
      */
-    private static String getRandomFileName() {
+    public static String getRandomFileName() {
         String curTimeStr = dateFormat.format(new Date());
         int rand = r.nextInt(89999) + 10000;
         return curTimeStr + rand;
