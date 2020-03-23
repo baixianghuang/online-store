@@ -78,6 +78,23 @@ public class ImageUtil {
         return curTimeStr + rand;
     }
 
+    /**
+     * Delete old image file and its directory before updating
+     * @param storePath
+     */
+    public static void deleteFileOrPath(String storePath) {
+        File file = new File(PathUtil.getImgBasePath() + storePath);
+        if (file.exists()) {
+            if (file.isDirectory()) {
+                File[] files = file.listFiles();
+                for (File f : files) {
+                    f.delete();
+                }
+            }
+            file.delete();
+        }
+    }
+
     public static void main(String[] args) throws IOException {
         Thumbnails.of(new File("F:\\QQ\\873253190\\FileRecv\\test1.jpg")).
                 size(200, 200).watermark(Positions.BOTTOM_RIGHT,

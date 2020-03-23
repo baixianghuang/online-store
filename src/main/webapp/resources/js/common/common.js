@@ -37,5 +37,5 @@ function getQueryString(name) {
  * @returns
  */
 function getContextPath(){
-	return "/o2o/";
+	return "/online_store/";
 }

@@ -9,13 +9,32 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;
+import java.util.List;
 
 public class ShopDaoTest extends BaseTest {
     @Autowired
     private ShopDao shopDao;
 
+    @Test
+    public void testQueryShopList() {
+        Shop shopCondition = new Shop();
+        PersonInfo owner = new PersonInfo();
+        owner.setUserId(15L);
+        shopCondition.setOwner(owner);
+        List<Shop> shopList = shopDao.queryShopList(shopCondition,0,5);
+        System.out.println(shopList.size());
+        System.out.println(shopList.get(0).getShopName());
+        System.out.println(shopDao.queryShopCount(shopCondition));
+    }
+
 //    @Test
-    public void insertShop() {
+    public void testQueryByShopId() {
+        Shop shop = shopDao.queryByShopId(2L);
+        System.out.println(shop.getShopName());
+    }
+
+//    @Test
+    public void testInsertShop() {
         Shop shop = new Shop();
         PersonInfo owner = new PersonInfo();
         Area area = new Area();
@@ -38,8 +57,8 @@ public class ShopDaoTest extends BaseTest {
         System.out.println(effectNum);
     }
 
-    @Test
-    public void updateShop() {
+//    @Test
+    public void testUpdateShop() {
         Shop shop = new Shop();
         shop.setShopId(2L);
         shop.setShopDesc("updateDesc");

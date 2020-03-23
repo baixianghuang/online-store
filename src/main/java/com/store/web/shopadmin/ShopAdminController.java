@@ -13,4 +13,18 @@ public class ShopAdminController {
         return "shop/shopoperation";
     }
 
+    @RequestMapping("/shoplist")
+    public String shopList() {
+        return "shop/shoplist";
+    }
+
+    @RequestMapping("/shopmanagement")
+    public String shopManagement() {
+        return "shop/shopmanagement";
+    }
+
+    @RequestMapping(value = "/productcategorymanagement", method = RequestMethod.GET)
+    public String productCategoryManagement() {
+        return "shop/productcategorymanagement";
+    }
 }

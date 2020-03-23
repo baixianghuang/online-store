@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class ProductCategory {
 	private Long productCategoryId;
-	private Long shopId;
+	private Long shopId;  // Use shopId instead of Shop because we don't need info other than shopId here
 	private String productCategoryName;
 	private Integer priority;
 	private Date createTime;

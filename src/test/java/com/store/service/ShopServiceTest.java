@@ -13,13 +13,37 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.Date;
+import java.util.List;
 
 public class ShopServiceTest extends BaseTest {
     @Autowired
     private ShopService shopService;
 
     @Test
+    public void testGetShopList() {
+        Shop shopCondition = new Shop();
+        PersonInfo owner = new PersonInfo();
+        owner.setUserId(15L);
+        shopCondition.setOwner(owner);
+        List<Shop> shopList = shopService.getShopList(shopCondition,0,5).getShopList();
+        System.out.println(shopList.size());
+        System.out.println(shopList.get(0).getShopName());
+    }
+
+//    @Test
+    public void testModifyShop() throws FileNotFoundException {
+        Shop shop = shopService.getByShopId(20L);
+        System.out.println(shop.getShopName());
+        shop.setShopName("new name");
+        File shopImg = new File("F:\\QQ\\873253190\\FileRecv\\test1.jpg");
+        InputStream inputStream = new FileInputStream(shopImg);
+        ShopExecution shopExecution = shopService.modifyShop(shop, inputStream, "test1.jpg");
+        System.out.println(shopExecution.getShop().getShopImg());
+    }
+
+//    @Test
     public void testAddShop() throws FileNotFoundException {
         Shop shop = new Shop();
         PersonInfo owner = new PersonInfo();

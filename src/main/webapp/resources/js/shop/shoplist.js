@@ -2,7 +2,7 @@ $(function() {
 	getlist();
 	function getlist(e) {
 		$.ajax({
-			url : "/o2o/shopadmin/getshoplist",
+			url : "/online_store/shopadmin/getshoplist",
 			type : "get",
 			dataType : "json",
 			success : function(data) {
@@ -22,8 +22,7 @@ $(function() {
 		data.map(function(item, index) {
 			html += '<div class="row row-shop"><div class="col-40">'
 					+ item.shopName + '</div><div class="col-40">'
-					+ shopStatus(item.enableStatus)
-					+ '</div><div class="col-20">'
+					+ shopStatus(item.enableStatus) + '</div><div class="col-20">'
 					+ goShop(item.enableStatus, item.shopId) + '</div></div>';
 
 		});
@@ -32,18 +31,18 @@ $(function() {
 
 	function shopStatus(status) {
 		if (status == 0) {
-			return '审核中';
+			return 'Under censor';
 		} else if (status == -1) {
-			return '店铺非法';
+			return 'Not approved';
 		} else if (status == 1) {
-			return '审核通过';
+			return 'Approved';
 		}
 	}
 
 	function goShop(status, id) {
 		if (status == 1) {
-			return '<a href="/o2o/shopadmin/shopmanagement?shopId=' + id
-					+ '">进入</a>';
+			return '<a href="/online_store/shopadmin/shopmanagement?shopId=' + id
+					+ '">Enter</a>';
 		} else {
 			return '';
 		}
