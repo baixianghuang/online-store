@@ -1,6 +1,7 @@
 package com.store.web.shopadmin;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.store.dto.ImageHolder;
 import com.store.dto.ShopExecution;
 import com.store.entity.*;
 import com.store.enums.ShopStateEnum;
@@ -181,7 +182,8 @@ public class ShopManagementController {
 //            }
             ShopExecution se = null;
             try {
-                se = shopService.addShop(shop, shopImg.getInputStream(), shopImg.getOriginalFilename());
+                ImageHolder imageHolder = new ImageHolder(shopImg.getOriginalFilename(), shopImg.getInputStream());
+                se = shopService.addShop(shop, imageHolder);
                 if (se.getState() == ShopStateEnum.CHECK.getState()) {
                     modelMap.put("success", true);
                     List<Shop> shopList = (List<Shop>) request.getSession().getAttribute("shopList");
@@ -240,9 +242,10 @@ public class ShopManagementController {
             ShopExecution se = null;
             try {
                 if (shopImg == null) {
-                    se = shopService.modifyShop(shop, null, null);
+                    se = shopService.modifyShop(shop, null);
                 } else {
-                    se = shopService.modifyShop(shop, shopImg.getInputStream(), shopImg.getOriginalFilename());
+                    ImageHolder imageHolder = new ImageHolder(shopImg.getOriginalFilename(), shopImg.getInputStream());
+                    se = shopService.modifyShop(shop, imageHolder);
                 }
                 if (se.getState() == ShopStateEnum.SUCCESS.getState()) {
                     modelMap.put("success", true);

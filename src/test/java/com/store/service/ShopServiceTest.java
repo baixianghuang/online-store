@@ -1,6 +1,7 @@
 package com.store.service;
 
 import com.store.BaseTest;
+import com.store.dto.ImageHolder;
 import com.store.dto.ShopExecution;
 import com.store.entity.Area;
 import com.store.entity.PersonInfo;
@@ -39,7 +40,8 @@ public class ShopServiceTest extends BaseTest {
         shop.setShopName("new name");
         File shopImg = new File("F:\\QQ\\873253190\\FileRecv\\test1.jpg");
         InputStream inputStream = new FileInputStream(shopImg);
-        ShopExecution shopExecution = shopService.modifyShop(shop, inputStream, "test1.jpg");
+        ImageHolder imageHolder = new ImageHolder("test1.jpg", inputStream);
+        ShopExecution shopExecution = shopService.modifyShop(shop, imageHolder);
         System.out.println(shopExecution.getShop().getShopImg());
     }
 
@@ -63,7 +65,8 @@ public class ShopServiceTest extends BaseTest {
         shop.setEnableStatus(ShopStateEnum.CHECK.getState());
         shop.setAdvice("under review");
         File shopImg = new File("F:\\QQ\\873253190\\FileRecv\\test1.jpg");
-        ShopExecution se = shopService.addShop(shop, new FileInputStream(shopImg), shopImg.getName());
+        ImageHolder imageHolder = new ImageHolder(shopImg.getName(), new FileInputStream(shopImg));
+        ShopExecution se = shopService.addShop(shop, imageHolder);
     }
 
 }

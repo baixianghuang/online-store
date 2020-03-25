@@ -2,6 +2,9 @@ package com.store.entity;
 
 import java.util.Date;
 
+/**
+ * Each product can have multiple product images
+ */
 public class ProductImg {
 	private Long productImgId;
 	private String imgAddr;

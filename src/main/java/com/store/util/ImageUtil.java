@@ -1,5 +1,6 @@
 package com.store.util;
 
+import com.store.dto.ImageHolder;
 import net.coobird.thumbnailator.Thumbnails;
 import net.coobird.thumbnailator.geometry.Positions;
 import org.slf4j.Logger;
@@ -32,16 +33,16 @@ public class ImageUtil {
         return newFile;
     }
 
-    public static String generateThumbNail(InputStream thumbnailInputStream, String fileName, String targetPath) {
+    public static String generateThumbNail(ImageHolder thumbnail, String targetPath) {
         String realFileName = getRandomFileName();
-        String extension = getFileExtension(fileName);
+        String extension = getFileExtension(thumbnail.getImageName());
         makeDirPath(targetPath);
         String relativePath = targetPath + realFileName + extension;
         logger.debug("Relative path is: " + relativePath);
         File dest = new File(PathUtil.getImgBasePath() + relativePath);
         logger.debug("Complete path is: " + PathUtil.getImgBasePath() + relativePath);
         try {
-            Thumbnails.of(thumbnailInputStream).size(200, 200).watermark(Positions.BOTTOM_RIGHT,
+            Thumbnails.of(thumbnail.getImage()).size(200, 200).watermark(Positions.BOTTOM_RIGHT,
                     ImageIO.read(new File(basePath+"/watermark.jpg")), 0.25f).
                     outputQuality(0.8f).toFile(dest);
         } catch (IOException e) {
