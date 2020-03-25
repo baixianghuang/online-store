@@ -3,7 +3,7 @@ $(function() {
 	var maxItems = 20;
 	var pageSize = 10;
 	// 获取该用户的奖品领取记录列表的URL
-	var listUrl = '/o2o/frontend/listuserawardmapsbycustomer';
+	var listUrl = '/online_store/frontend/listuserawardmapsbycustomer';
 
 	var pageNum = 1;
 	var awardName = '';
@@ -65,7 +65,7 @@ $(function() {
 					'.card',
 					function(e) {
 						var userAwardId = e.currentTarget.dataset.userAwardId;
-						window.location.href = '/o2o/frontend/myawarddetail?userAwardId='
+						window.location.href = '/online_store/frontend/myawarddetail?userAwardId='
 								+ userAwardId;
 					});
 	// 无极滚动

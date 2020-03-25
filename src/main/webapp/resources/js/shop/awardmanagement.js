@@ -1,8 +1,8 @@
 $(function() {
 	// 获取该店铺下的奖品列表URL
-	var listUrl = '/o2o/shopadmin/listawardsbyshop?pageIndex=1&pageSize=9999';
+	var listUrl = '/online_store/shopadmin/listawardsbyshop?pageIndex=1&pageSize=9999';
 	// 设置奖品的可见状态
-	var changeUrl = '/o2o/shopadmin/modifyaward';
+	var changeUrl = '/online_store/shopadmin/modifyaward';
 	getList();
 	function getList() {
 		// 访问后台，获取奖品列表
@@ -66,7 +66,7 @@ $(function() {
 						var target = $(e.currentTarget);
 						if (target.hasClass('edit')) {
 							// 如果有class edit则点击就进入奖品信息编辑页面，并带有awardId参数
-							window.location.href = '/o2o/shopadmin/awardoperation?awardId='
+							window.location.href = '/online_store/shopadmin/awardoperation?awardId='
 									+ e.currentTarget.dataset.id;
 						} else if (target.hasClass('delete')) {
 							// 如果有class status则调用后台功能上/下架相关奖品，并带有productId参数
@@ -74,14 +74,14 @@ $(function() {
 									e.currentTarget.dataset.status);
 						} else if (target.hasClass('preview')) {
 							// 如果有class preview则去前台展示系统该奖品详情页预览奖品情况
-							window.location.href = '/o2o/frontend/awarddetail?awardId='
+							window.location.href = '/online_store/frontend/awarddetail?awardId='
 									+ e.currentTarget.dataset.id;
 						}
 					});
 
 	// 给新增按钮绑定点击事件
 	$('#new').click(function() {
-		window.location.href = '/o2o/shopadmin/awardoperation';
+		window.location.href = '/online_store/shopadmin/awardoperation';
 	});
 	function changeItem(awardId, enableStatus) {
 		// 定义award json对象并添加awardId以及状态(上架/下架)

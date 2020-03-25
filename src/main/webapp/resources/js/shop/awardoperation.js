@@ -2,9 +2,9 @@ $(function() {
 	// 从URL里获取awardId参数的值
 	var awardId = getQueryString('awardId');
 	// 通过awardId获取奖品信息的URL
-	var infoUrl = '/o2o/shopadmin/getawardbyid?awardId=' + awardId;
+	var infoUrl = '/online_store/shopadmin/getawardbyid?awardId=' + awardId;
 	// 更新奖品信息的URL
-	var awardPostUrl = '/o2o/shopadmin/modifyaward';
+	var awardPostUrl = '/online_store/shopadmin/modifyaward';
 	// 由于奖品添加和编辑使用的是同一个页面，
 	// 该标识符用来标明本次是添加还是编辑操作
 	var isEdit = false;
@@ -13,7 +13,7 @@ $(function() {
 		getInfo(awardId);
 		isEdit = true;
 	} else {
-		awardPostUrl = '/o2o/shopadmin/addaward';
+		awardPostUrl = '/online_store/shopadmin/addaward';
 	}
 	// 获取需要编辑的奖品信息，并赋值给表单
 	function getInfo(id) {

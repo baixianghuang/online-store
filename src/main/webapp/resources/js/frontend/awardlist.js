@@ -3,9 +3,9 @@ $(function() {
 	var maxItems = 999;
 	var pageSize = 10;
 	// 获取奖品列表的URL
-	var listUrl = '/o2o/frontend/listawardsbyshop';
+	var listUrl = '/online_store/frontend/listawardsbyshop';
 	// 兑换奖品的URL
-	var exchangeUrl = '/o2o/frontend/adduserawardmap';
+	var exchangeUrl = '/online_store/frontend/adduserawardmap';
 	var pageNum = 1;
 	// 从地址栏URL里获取shopId
 	var shopId = getQueryString('shopId');

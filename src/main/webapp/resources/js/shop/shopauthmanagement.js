@@ -1,8 +1,8 @@
 $(function() {
 	// 列出该店铺下所有授权信息的URL
-	var listUrl = '/o2o/shopadmin/listshopauthmapsbyshop?pageIndex=1&pageSize=9999';
+	var listUrl = '/online_store/shopadmin/listshopauthmapsbyshop?pageIndex=1&pageSize=9999';
 	// 修改授权信息的URL
-	var modifyUrl = '/o2o/shopadmin/modifyshopauthmap';
+	var modifyUrl = '/online_store/shopadmin/modifyshopauthmap';
 	getList();
 
 	function getList() {
@@ -59,7 +59,7 @@ $(function() {
 					function(e) {
 						var target = $(e.currentTarget);
 						if (target.hasClass('edit')) {
-							window.location.href = '/o2o/shopadmin/shopauthedit?shopAuthId='
+							window.location.href = '/online_store/shopadmin/shopauthedit?shopAuthId='
 									+ e.currentTarget.dataset.authId;
 						} else if (target.hasClass('status')) {
 							changeStatus(e.currentTarget.dataset.authId,

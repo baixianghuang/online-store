@@ -1,10 +1,8 @@
 package com.store.enums;
 
 public enum ProductCategoryStateEnum {
-	SUCCESS(1, "Operation succeed"), INNER_ERROR(-1001, "Operation failed"), EMPTY_LIST(-1002, "The number of add is less than 1");
-
+	SUCCESS(1, "ProductCategory Operation succeeded"), INNER_ERROR(-1001, "ProductCategory Operation failed"), EMPTY_LIST(-1002, "The number of add is less than 1");
 	private int state;
-
 	private String stateInfo;
 
 	private ProductCategoryStateEnum(int state, String stateInfo) {

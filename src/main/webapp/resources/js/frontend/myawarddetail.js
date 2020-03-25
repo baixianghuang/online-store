@@ -2,7 +2,7 @@ $(function() {
 	// 从地址栏中获取userAwardId
 	var userAwardId = getQueryString('userAwardId');
 	// 根据userAwardId获取用户奖品映射信息
-	var awardUrl = '/o2o/frontend/getawardbyuserawardid?userAwardId='
+	var awardUrl = '/online_store/frontend/getawardbyuserawardid?userAwardId='
 			+ userAwardId;
 
 	$
@@ -21,7 +21,7 @@ $(function() {
 							var imgListHtml = '';
 							// 若未去实体店兑换实体奖品，生成兑换礼品的二维码供商家扫描
 							if (data.usedStatus == 0) {
-								imgListHtml += '<div> <img src="/o2o/frontend/generateqrcode4award?userAwardId='
+								imgListHtml += '<div> <img src="/online_store/frontend/generateqrcode4award?userAwardId='
 										+ userAwardId
 										+ '" width="100%"/></div>';
 								$('#imgList').html(imgListHtml);

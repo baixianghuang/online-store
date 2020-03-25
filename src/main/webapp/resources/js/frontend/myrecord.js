@@ -3,7 +3,7 @@ $(function() {
 	var maxItems = 20;
 	var pageSize = 10;
 	// 获取顾客消费记录列表的URL
-	var listUrl = '/o2o/frontend/listuserproductmapsbycustomer';
+	var listUrl = '/online_store/frontend/listuserproductmapsbycustomer';
 	var pageNum = 1;
 	var productName = '';
 	addItems(pageSize, pageNum);

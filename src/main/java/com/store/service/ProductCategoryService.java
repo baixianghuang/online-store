@@ -8,7 +8,10 @@ import com.store.exceptions.ProductCategoryOperationException;
 import java.util.List;
 
 public interface ProductCategoryService {
-    List<ProductCategory> getProductCategoryList(long shopId);
     ProductCategoryExecution batchAddProductCategory(List<ProductCategory> productCategoryList)
             throws ProductCategoryOperationException;
+    ProductCategoryExecution deleteProductCategory(long shopCategoryId, long shopId)
+            throws ProductCategoryOperationException;
+    List<ProductCategory> getProductCategoryList(long shopId);
+
 }

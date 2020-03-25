@@ -3,7 +3,7 @@ $(function() {
 	var maxItems = 999;
 	var pageSize = 10;
 	// 获取用户各店铺积分信息的URL
-	var listUrl = '/o2o/frontend/listusershopmapsbycustomer';
+	var listUrl = '/online_store/frontend/listusershopmapsbycustomer';
 	var pageNum = 1;
 	var shopName = '';
 	// 预先加载20条

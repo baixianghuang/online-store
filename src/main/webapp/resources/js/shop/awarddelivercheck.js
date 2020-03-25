@@ -3,7 +3,7 @@ $(function() {
 	getList();
 	function getList() {
 		// 获取积分兑换记录的URL
-		var listUrl = '/o2o/shopadmin/listuserawardmapsbyshop?pageIndex=1&pageSize=9999&awardName='
+		var listUrl = '/online_store/shopadmin/listuserawardmapsbyshop?pageIndex=1&pageSize=9999&awardName='
 				+ awardName;
 		$.getJSON(listUrl, function(data) {
 			if (data.success) {

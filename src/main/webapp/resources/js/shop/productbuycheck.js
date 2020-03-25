@@ -4,7 +4,7 @@ $(function() {
 	getList();
 	function getList() {
 		// 获取用户购买信息的URL
-		var listUrl = '/o2o/shopadmin/listuserproductmapsbyshop?pageIndex=1&pageSize=9999&productName='
+		var listUrl = '/online_store/shopadmin/listuserproductmapsbyshop?pageIndex=1&pageSize=9999&productName='
 				+ productName;
 		// 访问后台，获取该店铺的购买信息列表
 		$.getJSON(listUrl, function(data) {
@@ -43,7 +43,7 @@ $(function() {
 	 */
 	function getProductSellDailyList() {
 		// 获取该店铺商品7天销量的URL
-		var listProductSellDailyUrl = '/o2o/shopadmin/listproductselldailyinfobyshop';
+		var listProductSellDailyUrl = '/online_store/shopadmin/listproductselldailyinfobyshop';
 		// 访问后台，该店铺商品7天销量的URL
 		$.getJSON(listProductSellDailyUrl, function(data) {
 			if (data.success) {

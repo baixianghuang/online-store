@@ -8,5 +8,6 @@ import java.util.List;
 
 public interface ProductCategoryDao {
     int batchInsertProductCategory(List<ProductCategory> productCategoryList);
+    int deleteProductCategory(@Param("productCategoryId") long productCategoryId, @Param("shopId") long shopId);
     List<ProductCategory> queryProductCategoryList(long shopId);
 }

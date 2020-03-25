@@ -3,7 +3,7 @@ $(function() {
 	getList();
 	function getList() {
 		// 获取该店铺用户积分的URL
-		var listUrl = '/o2o/shopadmin/listusershopmapsbyshop?pageIndex=1&pageSize=9999'
+		var listUrl = '/online_store/shopadmin/listusershopmapsbyshop?pageIndex=1&pageSize=9999'
 				+ '&userName=' + userName;
 		$.getJSON(listUrl, function(data) {
 			if (data.success) {

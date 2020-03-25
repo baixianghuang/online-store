@@ -1,6 +1,6 @@
 $(function () {
     var listUrl = '/online_store/shopadmin/getproductcategorylist';
-    var addUrl = '/online_store/shopadmin/addproductcategorys';
+    var addUrl = '/online_store/shopadmin/addproductcategory';
     var deleteUrl = '/online_store/shopadmin/removeproductcategory';
     getList();
 
@@ -33,6 +33,7 @@ $(function () {
             });
     }
 
+    // Add a new line when the Add button is clicked
     $('#new')
         .click(
             function () {
@@ -62,25 +63,27 @@ $(function () {
             contentType: 'application/json',
             success: function (data) {
                 if (data.success) {
-                    $.toast('Submit succeed！');
+                    $.toast('Submit succeeded!');
                     getList();
                 } else {
-                    $.toast('Submit failed！');
+                    $.toast('Submit failed! ');
                 }
             }
         });
     });
 
+    // temp denotes this line is newly added but not submitted yet
     $('.category-wrap').on('click', '.row-product-category.temp .delete',
         function (e) {
             console.log($(this).parent().parent());
             $(this).parent().parent().remove();
 
         });
+    // now denotes this line is already stored in database
     $('.category-wrap').on('click', '.row-product-category.now .delete',
         function (e) {
             var target = e.currentTarget;
-            $.confirm('确定么?', function () {
+            $.confirm('Remove confirm?', function () {
                 $.ajax({
                     url: deleteUrl,
                     type: 'POST',
@@ -90,10 +93,10 @@ $(function () {
                     dataType: 'json',
                     success: function (data) {
                         if (data.success) {
-                            $.toast('删除成功！');
+                            $.toast('Remove succeeded');
                             getList();
                         } else {
-                            $.toast('删除失败！');
+                            $.toast('Removed failed');
                         }
                     }
                 });

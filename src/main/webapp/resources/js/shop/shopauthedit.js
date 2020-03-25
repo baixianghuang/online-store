@@ -1,15 +1,15 @@
 $(function() {
 	var shopAuthId = getQueryString('shopAuthId');
 	// 根据主键获取授权信息的URL
-	var infoUrl = '/o2o/shopadmin/getshopauthmapbyid?shopAuthId=' + shopAuthId;
+	var infoUrl = '/online_store/shopadmin/getshopauthmapbyid?shopAuthId=' + shopAuthId;
 	// 修改授权信息的URL
-	var shopAuthPostUrl = '/o2o/shopadmin/modifyshopauthmap';
+	var shopAuthPostUrl = '/online_store/shopadmin/modifyshopauthmap';
 
 	if (shopAuthId) {
 		getInfo(shopAuthId);
 	} else {
 		$.toast('用户不存在！');
-		window.location.href = '/o2o/shopadmin/shopmanage';
+		window.location.href = '/online_store/shopadmin/shopmanage';
 	}
 
 	function getInfo(id) {
