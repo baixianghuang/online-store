@@ -85,7 +85,7 @@ public class ProductCategoryManagementController {
     @RequestMapping(value = "/getproductcategorylist", method = RequestMethod.GET)
     @ResponseBody
     private Result<List<ProductCategory>> getProductCategoryList(HttpServletRequest request) {
-////        // remove this after log module is finished
+////        // shop has been set in /getshopmanagementinfo
 ////        Shop shop = new Shop();
 ////        shop.setShopId(2L);
 ////        request.getSession().setAttrib ute("currentShop", shop);

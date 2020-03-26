@@ -13,13 +13,13 @@ $(function() {
 		// 获取输入的密码
 		var password = $('#psw').val();
 		// 获取验证码信息
-		var verifyCodeActual = $('#j_captcha').val();
+		var verificationCodeActual = $('#j_captcha').val();
 		// 是否需要验证码验证，默认为false,即不需要
 		var needVerify = false;
 		// 如果登录三次都失败
 		if (loginCount >= 3) {
 			// 那么就需要验证码校验了
-			if (!verifyCodeActual) {
+			if (!verificationCodeActual) {
 				$.toast('请输入验证码！');
 				return;
 			} else {
@@ -36,7 +36,7 @@ $(function() {
 			data : {
 				userName : userName,
 				password : password,
-				verifyCodeActual : verifyCodeActual,
+				verificationCodeActual : verificationCodeActual,
 				//是否需要做验证码校验
 				needVerify : needVerify
 			},

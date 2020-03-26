@@ -22,7 +22,7 @@ public class ShopServiceTest extends BaseTest {
     @Autowired
     private ShopService shopService;
 
-    @Test
+//    @Test
     public void testGetShopList() {
         Shop shopCondition = new Shop();
         PersonInfo owner = new PersonInfo();
@@ -45,7 +45,7 @@ public class ShopServiceTest extends BaseTest {
         System.out.println(shopExecution.getShop().getShopImg());
     }
 
-//    @Test
+    @Test
     public void testAddShop() throws FileNotFoundException {
         Shop shop = new Shop();
         PersonInfo owner = new PersonInfo();

@@ -9,8 +9,7 @@ import java.io.InputStream;
 import java.util.List;
 
 public interface ProductService {
-    ProductExecution addProduct(Product product, ProductService thumbnail,  List<ImageHolder> productImgList)
+    ProductExecution addProduct(Product product, ImageHolder thumbnail, List<ImageHolder> productImgList)
             throws ProductOperationException;
-
 
 }

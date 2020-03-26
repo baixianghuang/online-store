@@ -10,9 +10,9 @@ $(function() {
 		// 获取输入的密码
 		var password = $('#psw').val();
 		// 获取输入的验证码
-		var verifyCodeActual = $('#j_captcha').val();
+		var verificationCodeActual = $('#j_captcha').val();
 		var needVerify = false;
-		if (!verifyCodeActual) {
+		if (!verificationCodeActual) {
 			$.toast('请输入验证码！');
 			return;
 		}
@@ -26,7 +26,7 @@ $(function() {
 			data : {
 				userName : userName,
 				password : password,
-				verifyCodeActual : verifyCodeActual
+				verificationCodeActual : verificationCodeActual
 			},
 			success : function(data) {
 				if (data.success) {

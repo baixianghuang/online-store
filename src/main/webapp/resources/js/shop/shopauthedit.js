@@ -31,8 +31,8 @@ $(function() {
 		shopAuth.employee.name = $('#shopauth-name').val();
 		shopAuth.title = $('#title').val();
 		shopAuth.shopAuthId = shopAuthId;
-		var verifyCodeActual = $('#j_captcha').val();
-		if (!verifyCodeActual) {
+		var verificationCodeActual = $('#j_captcha').val();
+		if (!verificationCodeActual) {
 			$.toast('请输入验证码！');
 			return;
 		}
@@ -43,7 +43,7 @@ $(function() {
 			data : {
 				// 将json参数转化为字符串
 				shopAuthMapStr : JSON.stringify(shopAuth),
-				verifyCodeActual : verifyCodeActual
+				verificationCodeActual : verificationCodeActual
 			},
 			success : function(data) {
 				if (data.success) {

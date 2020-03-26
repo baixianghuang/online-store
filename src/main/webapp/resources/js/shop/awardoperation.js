@@ -45,12 +45,12 @@ $(function() {
 		// 将award json对象转成字符流保存至表单对象key为awardStr的的键值对里
 		formData.append('awardStr', JSON.stringify(award));
 		// 获取表单里输入的验证码
-		var verifyCodeActual = $('#j_captcha').val();
-		if (!verifyCodeActual) {
+		var verificationCodeActual = $('#j_captcha').val();
+		if (!verificationCodeActual) {
 			$.toast('请输入验证码！');
 			return;
 		}
-		formData.append("verifyCodeActual", verifyCodeActual);
+		formData.append("verificationCodeActual", verificationCodeActual);
 		// 将数据提交至后台处理相关操作
 		$.ajax({
 			url : awardPostUrl,

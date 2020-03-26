@@ -1,7 +1,8 @@
 package com.store.enums;
 
 public enum ProductStateEnum {
-	OFFLINE(-1, "非法商品"), DOWN(0, "下架"), SUCCESS(1, "操作成功"), INNER_ERROR(-1001, "操作失败"), EMPTY(-1002, "商品为空");
+	OFFLINE(-1, "Illegal Product"), DOWN(0, "Product not available"), SUCCESS(1, "Product Operation succeeded"),
+	INNER_ERROR(-1001, "Product Operation failed"), EMPTY(-1002, "Empty product");
 
 	private int state;
 

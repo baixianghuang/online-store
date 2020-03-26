@@ -22,12 +22,12 @@ $(function() {
 		formData.append('password', password);
 		formData.append('newPassword', newPassword);
 		// 获取验证码
-		var verifyCodeActual = $('#j_captcha').val();
-		if (!verifyCodeActual) {
+		var verificationCodeActual = $('#j_captcha').val();
+		if (!verificationCodeActual) {
 			$.toast('请输入验证码！');
 			return;
 		}
-		formData.append("verifyCodeActual", verifyCodeActual);
+		formData.append("verificationCodeActual", verificationCodeActual);
 		// 将参数post到后台去修改密码
 		$.ajax({
 			url : url,
