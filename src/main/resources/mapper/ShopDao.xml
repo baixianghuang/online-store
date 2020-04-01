@@ -33,9 +33,11 @@
         VALUES (#{owner.userId}, #{area.areaId}, #{shopCategory.shopCategoryId}, #{shopName}, #{shopDesc},
         #{shopAddr}, #{phone}, #{shopImg}, #{priority}, #{createTime}, #{lastEditTime}, #{enableStatus}, #{advice})
     </insert>
-<!--        <delete id="delete" parameterType="String">-->
-<!--            delete from tb_area where sn=#{sn}-->
-<!--        </delete>-->
+
+    <delete id="delete" parameterType="String">
+        delete from tb_area where sn=#{sn}
+    </delete>
+
     <update id="updateShop" parameterType="com.store.entity.Shop">
         UPDATE tb_shop
         <set>
@@ -108,6 +110,10 @@
 		    <if test="shopCondition.shopCategory != null and shopCondition.shopCategory.shopCategoryId != null">
                 and s.shop_category_id = #{shopCondition.shopCategory.shopCategoryId}
             </if>
+            <if test="shopCondition.shopCategory != null and shopCondition.shopCategory.parent and shopCondition.shopCategory.parent.shopCategoryId != null">
+                and s.shop_category_id in (select shop_category_id from tb_shop_category
+                where parent_id=#{shopCondition.shopCategory.parent.shopCategoryId})
+            </if>
             <if test="shopCondition.area != null">
                 and s.area_id = #{shopCondition.area.areaId}
             </if>
@@ -122,10 +128,8 @@
             </if>
             AND s.area_id = a.area_id
             AND s.shop_category_id = sc.shop_category_id
-
         </where>
-        ORDER BY
-        s.priority DESC
+        ORDER BY s.priority DESC
         LIMIT #{rowIndex}, #{pageSize}
     </select>
 

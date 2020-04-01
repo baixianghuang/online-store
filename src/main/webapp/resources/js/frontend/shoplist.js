@@ -1,24 +1,17 @@
 $(function() {
 	var loading = false;
-	// 分页允许返回的最大条数，超过此数则禁止访问后台
 	var maxItems = 999;
-	// 一页返回的最大条数
 	var pageSize = 3;
-	// 获取店铺列表的URL
 	var listUrl = '/online_store/frontend/listshops';
-	// 获取店铺类别列表以及区域列表的URL
 	var searchDivUrl = '/online_store/frontend/listshopspageinfo';
-	// 页码
 	var pageNum = 1;
-	// 从地址栏URL里尝试获取parent shop category id.
 	var parentId = getQueryString('parentId');
 	var areaId = '';
 	var shopCategoryId = '';
 	var shopName = '';
-	// 渲染出店铺类别列表以及区域列表以供搜索
 	getSearchDivData();
-	// 预先加载10条店铺信息
 	addItems(pageSize, pageNum);
+
 	/**
 	 * 获取店铺类别列表以及区域列表信息
 	 * 
@@ -76,13 +69,11 @@ $(function() {
 				+ '&shopCategoryId=' + shopCategoryId + '&shopName=' + shopName;
 		// 设定加载符，若还在后台取数据则不能再次访问后台，避免多次重复加载
 		loading = true;
-		// 访问后台获取相应查询条件下的店铺列表
 		$.getJSON(url, function(data) {
 			if (data.success) {
 				// 获取当前查询条件下店铺的总数
 				maxItems = data.count;
 				var html = '';
-				// 遍历店铺列表，拼接出卡片集合
 				data.shopList.map(function(item, index) {
 					html += '' + '<div class="card" data-shop-id="'
 							+ item.shopId + '">' + '<div class="card-header">'
@@ -112,11 +103,8 @@ $(function() {
 				} else {
 					$('.infinite-scroll-preloader').show();
 				}
-				// 否则页码加1，继续load出新的店铺
 				pageNum += 1;
-				// 加载结束，可以再次加载了
 				loading = false;
-				// 刷新页面，显示新加载的店铺
 				$.refreshScroller();
 			}
 		});
@@ -189,11 +177,9 @@ $(function() {
 		addItems(pageSize, pageNum);
 	});
 
-	// 点击后打开右侧栏
 	$('#me').click(function() {
 		$.openPanel('#panel-right-demo');
 	});
 
-	// 初始化页面
 	$.init();
 });

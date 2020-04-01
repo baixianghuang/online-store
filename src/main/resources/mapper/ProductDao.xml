@@ -52,22 +52,18 @@
 		point,
 		product_category_id,
 		shop_id
-		FROM
-		tb_product
+		FROM tb_product
 		<where>
 			<if
-				test="productCondition.shop!=null
-				 and productCondition.shop.shopId!=null">
+				test="productCondition.shop!=null and productCondition.shop.shopId!=null">
 				and shop_id = #{productCondition.shop.shopId}
 			</if>
 			<if
-				test="productCondition.productCategory!=null
-				 and productCondition.productCategory.productCategoryId!=null">
+				test="productCondition.productCategory!=null and productCondition.productCategory.productCategoryId!=null">
 				and product_category_id =
 				#{productCondition.productCategory.productCategoryId}
 			</if>
-			<!-- 写like语句的时候 一般都会写成 like '% %' 在mybatis里面写就是应该是 like '%${name} %' 而不是 
-				'%#{name} %' ${name} 是不带单引号的，而#{name} 是带单引号的 -->
+			<!-- Note that %${productCondition.productName}% is surrend by '' -->
 			<if test="productCondition.productName!=null">
 				and product_name like '%${productCondition.productName}%'
 			</if>
@@ -75,24 +71,20 @@
 				and enable_status = #{productCondition.enableStatus}
 			</if>
 		</where>
-		ORDER BY
-		priority DESC
-		LIMIT #{rowIndex},#{pageSize};
+		ORDER BY priority DESC LIMIT #{rowIndex},#{pageSize};
 	</select>
 
+<!--	Note that a space after count can cause error -->
 	<select id="queryProductCount" resultType="int">
 		SELECT count(1) FROM tb_product
 		<where>
 			<if
-				test="productCondition.shop!=null
-				 and productCondition.shop.shopId!=null">
+				test="productCondition.shop!=null and productCondition.shop.shopId!=null">
 				and shop_id = #{productCondition.shop.shopId}
 			</if>
 			<if
-				test="productCondition.productCategory!=null
-				 and productCondition.productCategory.productCategoryId!=null">
-				and product_category_id =
-				#{productCondition.productCategory.productCategoryId}
+				test="productCondition.productCategory!=null and productCondition.productCategory.productCategoryId!=null">
+				and product_category_id = #{productCondition.productCategory.productCategoryId}
 			</if>
 			<if test="productCondition.productName!=null">
 				and product_name like '%${productCondition.productName}%'
@@ -103,9 +95,7 @@
 		</where>
 	</select>
 
-	<select id="queryProductById" resultMap="productMap"
-		parameterType="Long">
-		<!-- 具体的sql -->
+	<select id="queryProductById" resultMap="productMap" parameterType="Long">
 		SELECT
 		p.product_id,
 		p.product_name,
@@ -125,18 +115,10 @@
 		pm.img_desc,
 		pm.priority,
 		pm.create_time
-		FROM
-		tb_product p
-		LEFT JOIN
-		tb_product_img pm
-		ON
-		p.product_id =
-		pm.product_id
-		WHERE
-		p.product_id =
-		#{productId}
-		ORDER BY
-		pm.priority DESC
+		FROM tb_product p
+		LEFT JOIN tb_product_img pm ON p.product_id = pm.product_id
+		WHERE p.product_id = #{productId}
+		ORDER BY pm.priority DESC
 	</select>
 
 	<insert id="insertProduct" parameterType="com.store.entity.Product"
@@ -162,30 +144,21 @@
 			<if test="lastEditTime != null">last_edit_time=#{lastEditTime},</if>
 			<if test="enableStatus != null">enable_status=#{enableStatus},</if>
 			<if test="point != null">point=#{point},</if>
-			<if
-				test="productCategory != null
-				 and productCategory.productCategoryId != null">
+			<if test="productCategory != null and productCategory.productCategoryId != null">
 				product_category_id=#{productCategory.productCategoryId}
 			</if>
 		</set>
-		WHERE product_id = #{productId}
-		AND shop_id=#{shop.shopId}
+		WHERE product_id=#{productId} AND shop_id=#{shop.shopId}
 	</update>
 
 	<update id="updateProductCategoryToNull" parameterType="Long">
-		UPDATE
-		tb_product
-		SET
-		product_category_id = null
-		WHERE product_category_id =
-		#{productCategoryId}
+		UPDATE tb_product
+		SET product_category_id = null
+		WHERE product_category_id=#{productCategoryId}
 	</update>
 
 	<delete id="deleteProduct">
-		DELETE FROM
-		tb_product
-		WHERE
-		product_id = #{productId}
-		AND shop_id=#{shopId}
+		DELETE FROM tb_product
+		WHERE product_id=#{productId} AND shop_id=#{shopId}
 	</delete>
 </mapper>

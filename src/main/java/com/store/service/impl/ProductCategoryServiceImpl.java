@@ -1,6 +1,7 @@
 package com.store.service.impl;
 
 import com.store.dao.ProductCategoryDao;
+import com.store.dao.ProductDao;
 import com.store.dto.ProductCategoryExecution;
 import com.store.entity.ProductCategory;
 import com.store.entity.ShopCategory;
@@ -17,6 +18,8 @@ import java.util.List;
 public class ProductCategoryServiceImpl implements ProductCategoryService {
     @Autowired
     ProductCategoryDao productCategoryDao;
+    @Autowired
+    ProductDao productDao;
 
     @Override
     public List<ProductCategory> getProductCategoryList(long shopId) {
@@ -45,10 +48,19 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
 
     @Override
     @Transactional
-    public ProductCategoryExecution deleteProductCategory(long shopCategoryId, long shopId) throws ProductCategoryOperationException {
-        // TODO set effected products' shopCategoryId into null
+    public ProductCategoryExecution deleteProductCategory(long productCategoryId, long shopId) throws ProductCategoryOperationException {
         try {
-            int effectedNum = productCategoryDao.deleteProductCategory(shopCategoryId, shopId);
+            int effectedNum = productDao.updateProductCategoryToNull(productCategoryId);
+            if (effectedNum < 0) {
+                throw new RuntimeException("Error in updateProductCategoryToNull");
+            }
+
+        } catch (Exception e) {
+            throw new RuntimeException("Error in deleteProductCategory" + e.getMessage());
+        }
+
+        try {
+            int effectedNum = productCategoryDao.deleteProductCategory(productCategoryId, shopId);
             ProductCategoryExecution pe = new ProductCategoryExecution();
             if (effectedNum > 0) {
                 return new ProductCategoryExecution(ProductCategoryStateEnum.SUCCESS);

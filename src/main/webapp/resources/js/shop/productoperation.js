@@ -89,12 +89,11 @@ $(function () {
             var thumbnail = $('#small-img')[0].files[0];
             var formData = new FormData();
             formData.append('thumbnail', thumbnail);
-            // 遍历商品详情图控件，获取里面的文件流
             $('.detail-img').map(
                 function (index, item) {
-                    // 判断该控件是否已选择了文件
+                    // See if the file is choosen
                     if ($('.detail-img')[index].files.length > 0) {
-                        // 将第i个文件流赋值给key为productImgi的表单键值对里
+                        // key = productImgi, value = file
                         formData.append('productImg' + index, $('.detail-img')[index].files[0]);
                     }
                 });
