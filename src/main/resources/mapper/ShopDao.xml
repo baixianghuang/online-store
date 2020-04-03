@@ -110,7 +110,7 @@
 		    <if test="shopCondition.shopCategory != null and shopCondition.shopCategory.shopCategoryId != null">
                 and s.shop_category_id = #{shopCondition.shopCategory.shopCategoryId}
             </if>
-            <if test="shopCondition.shopCategory != null and shopCondition.shopCategory.parent and shopCondition.shopCategory.parent.shopCategoryId != null">
+            <if test="shopCondition.shopCategory != null and shopCondition.shopCategory.parent != null and shopCondition.shopCategory.parent.shopCategoryId != null">
                 and s.shop_category_id in (select shop_category_id from tb_shop_category
                 where parent_id=#{shopCondition.shopCategory.parent.shopCategoryId})
             </if>
@@ -126,8 +126,8 @@
             <if test="shopCondition.owner != null and shopCondition.owner.userId != null">
                 and s.owner_id = #{shopCondition.owner.userId}
             </if>
-            AND s.area_id = a.area_id
-            AND s.shop_category_id = sc.shop_category_id
+                AND s.area_id = a.area_id
+                AND s.shop_category_id = sc.shop_category_id
         </where>
         ORDER BY s.priority DESC
         LIMIT #{rowIndex}, #{pageSize}

@@ -1,21 +1,24 @@
-2020-03-22 10:43:30.768 [main] DEBUG c.s.d.ProductCategoryDao.queryProductCategoryList - ==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id = ? 
-2020-03-22 10:43:30.837 [main] DEBUG c.s.d.ProductCategoryDao.queryProductCategoryList - ==> Parameters: 2(Long)
-2020-03-22 10:43:30.852 [main] DEBUG c.s.d.ProductCategoryDao.queryProductCategoryList - <==      Total: 0
-2020-03-22 10:44:56.541 [main] DEBUG c.s.d.ProductCategoryDao.queryProductCategoryList - ==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id = ? 
-2020-03-22 10:44:56.578 [main] DEBUG c.s.d.ProductCategoryDao.queryProductCategoryList - ==> Parameters: 2(Long)
-2020-03-22 10:44:56.594 [main] DEBUG c.s.d.ProductCategoryDao.queryProductCategoryList - <==      Total: 2
-2020-03-22 16:50:34.680 [main] DEBUG c.s.d.P.batchInsertProductCategory - ==>  Preparing: INSERT INTO tb_product_category (product_category_name, priority, create_time, shop_id) VALUES ( ?, ?, ?, ? ) , ( ?, ?, ?, ? ) WHERE shop_id = ? ORDER BY priority DESC 
-2020-03-22 16:54:25.897 [main] DEBUG c.s.d.P.batchInsertProductCategory - ==>  Preparing: INSERT INTO tb_product_category (product_category_name, priority, create_time, shop_id) VALUES ( ?, ?, ?, ? ) , ( ?, ?, ?, ? ) 
-2020-03-22 16:54:25.938 [main] DEBUG c.s.d.P.batchInsertProductCategory - ==> Parameters: pCat2(String), 2(Integer), 2020-03-22 16:54:24.981(Timestamp), 2(Long), null, null, null, null
-2020-03-22 16:56:41.143 [main] DEBUG c.s.d.P.batchInsertProductCategory - ==>  Preparing: INSERT INTO tb_product_category (product_category_name, priority, create_time, shop_id) VALUES ( ?, ?, ?, ? ) , ( ?, ?, ?, ? ) 
-2020-03-22 16:56:41.176 [main] DEBUG c.s.d.P.batchInsertProductCategory - ==> Parameters: pCat2(String), 2(Integer), 2020-03-22 16:56:40.331(Timestamp), 2(Long), null, null, null, null
-2020-03-22 17:47:05.877 [main] DEBUG c.s.d.P.batchInsertProductCategory - ==>  Preparing: INSERT INTO tb_product_category (product_category_name, priority, create_time, shop_id) VALUES ( ?, ?, ?, ? ) , ( ?, ?, ?, ? ) 
-2020-03-22 17:47:05.917 [main] DEBUG c.s.d.P.batchInsertProductCategory - ==> Parameters: pCat2(String), 2(Integer), 2020-03-22 17:47:05.093(Timestamp), 2(Long), null, null, null, null
-2020-03-22 17:48:57.676 [main] DEBUG c.s.d.P.batchInsertProductCategory - ==>  Preparing: INSERT INTO tb_product_category(product_category_name, priority, create_time, shop_id) VALUES ( ?, ?, ?, ? ) , ( ?, ?, ?, ? ) 
-2020-03-22 17:48:57.712 [main] DEBUG c.s.d.P.batchInsertProductCategory - ==> Parameters: pCat2(String), 2(Integer), 2020-03-22 17:48:56.894(Timestamp), 2(Long), null, null, null, null
-2020-03-22 17:52:59.663 [main] DEBUG c.s.d.P.batchInsertProductCategory - ==>  Preparing: INSERT INTO tb_product_category(product_category_name, priority, create_time, shop_id) VALUES ( ?, ?, ?, ? ) , ( ?, ?, ?, ? ) 
-2020-03-22 17:52:59.698 [main] DEBUG c.s.d.P.batchInsertProductCategory - ==> Parameters: pCat1(String), 1(Integer), 2020-03-22 17:52:58.869(Timestamp), 2(Long), pCat2(String), 2(Integer), 2020-03-22 17:52:58.869(Timestamp), 2(Long)
-2020-03-22 17:52:59.705 [main] DEBUG c.s.d.P.batchInsertProductCategory - <==    Updates: 2
-2020-03-22 17:55:28.300 [main] DEBUG c.s.d.P.batchInsertProductCategory - ==>  Preparing: INSERT INTO tb_product_category (product_category_name, priority, create_time, shop_id) VALUES ( ?, ?, ?, ? ) , ( ?, ?, ?, ? ) 
-2020-03-22 17:55:28.345 [main] DEBUG c.s.d.P.batchInsertProductCategory - ==> Parameters: pCat1(String), 1(Integer), 2020-03-22 17:55:27.522(Timestamp), 2(Long), pCat2(String), 2(Integer), 2020-03-22 17:55:27.522(Timestamp), 2(Long)
-2020-03-22 17:55:28.349 [main] DEBUG c.s.d.P.batchInsertProductCategory - <==    Updates: 2
+2020-03-31 11:36:41.454 [main] DEBUG com.store.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.owner_id = ? AND s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id ORDER BY s.priority DESC LIMIT ?, ? 
+2020-03-31 11:36:41.512 [main] DEBUG com.store.dao.ShopDao.queryShopList - ==> Parameters: 15(Long), 0(Integer), 5(Integer)
+2020-03-31 11:36:41.527 [main] DEBUG com.store.dao.ShopDao.queryShopList - <==      Total: 0
+2020-03-31 11:36:41.533 [main] DEBUG com.store.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.owner_id = ? AND s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id 
+2020-03-31 11:36:41.534 [main] DEBUG com.store.dao.ShopDao.queryShopCount - ==> Parameters: 15(Long)
+2020-03-31 11:36:41.536 [main] DEBUG com.store.dao.ShopDao.queryShopCount - <==      Total: 1
+2020-03-31 11:46:01.021 [main] DEBUG com.store.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.owner_id = ? AND s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id ORDER BY s.priority DESC LIMIT ?, ? 
+2020-03-31 11:46:01.062 [main] DEBUG com.store.dao.ShopDao.queryShopList - ==> Parameters: 8(Long), 0(Integer), 5(Integer)
+2020-03-31 11:46:01.099 [main] DEBUG com.store.dao.ShopDao.queryShopList - <==      Total: 5
+2020-03-31 11:46:01.104 [main] DEBUG com.store.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.owner_id = ? AND s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id 
+2020-03-31 11:46:01.105 [main] DEBUG com.store.dao.ShopDao.queryShopCount - ==> Parameters: 8(Long)
+2020-03-31 11:46:01.108 [main] DEBUG com.store.dao.ShopDao.queryShopCount - <==      Total: 1
+2020-03-31 15:45:37.893 [main] DEBUG com.store.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.owner_id = ? AND s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id ORDER BY s.priority DESC LIMIT ?, ? 
+2020-03-31 15:45:37.951 [main] DEBUG com.store.dao.ShopDao.queryShopList - ==> Parameters: 8(Long), 0(Integer), 5(Integer)
+2020-03-31 15:45:38.011 [main] DEBUG com.store.dao.ShopDao.queryShopList - <==      Total: 5
+2020-03-31 15:45:38.017 [main] DEBUG com.store.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.owner_id = ? AND s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id 
+2020-03-31 15:45:38.018 [main] DEBUG com.store.dao.ShopDao.queryShopCount - ==> Parameters: 8(Long)
+2020-03-31 15:45:38.022 [main] DEBUG com.store.dao.ShopDao.queryShopCount - <==      Total: 1
+2020-03-31 15:46:56.481 [main] DEBUG com.store.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.owner_id = ? AND s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id ORDER BY s.priority DESC LIMIT ?, ? 
+2020-03-31 15:46:56.522 [main] DEBUG com.store.dao.ShopDao.queryShopList - ==> Parameters: 8(Long), 0(Integer), 99(Integer)
+2020-03-31 15:46:56.546 [main] DEBUG com.store.dao.ShopDao.queryShopList - <==      Total: 13
+2020-03-31 15:46:56.552 [main] DEBUG com.store.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.owner_id = ? AND s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id 
+2020-03-31 15:46:56.553 [main] DEBUG com.store.dao.ShopDao.queryShopCount - ==> Parameters: 8(Long)
+2020-03-31 15:46:56.555 [main] DEBUG com.store.dao.ShopDao.queryShopCount - <==      Total: 1
