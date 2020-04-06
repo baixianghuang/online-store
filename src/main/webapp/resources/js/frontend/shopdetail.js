@@ -69,7 +69,7 @@ $(function () {
                         + '</div>' + '</div>' + '<div class="card-footer">'
                         + '<p class="color-gray">'
                         + new Date(item.lastEditTime).Format("yyyy-MM-dd")
-                        + 'Update</p>' + '<span>View detail</span>' + '</div>'
+                        + ' Update</p>' + '<span>View detail</span>' + '</div>'
                         + '</div>';
                 });
                 $('.list-div').append(html);
@@ -120,7 +120,7 @@ $(function () {
         });
 
     // Empty the shop list and search using new name
-    $('#search').on('change', function (e) {
+    $('#search').on('change', function(e) {
         productName = e.target.value;
         $('.list-div').empty();
         pageNum = 1;

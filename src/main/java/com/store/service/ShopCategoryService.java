@@ -7,6 +7,7 @@ import com.store.entity.ShopCategory;
 import java.util.List;
 
 public interface ShopCategoryService {
+    public static final String SHOPCATEGORYLISTKEY = "shopcategorylist";  // redis
 
     ShopCategoryExecution addShopCategory(ShopCategory shopCategory, ImageHolder thumbnail);
 

@@ -8,7 +8,7 @@ import com.store.dto.ImageHolder;
 import com.store.entity.HeadLine;
 
 public interface HeadLineService {
-	public static final String HLLISTKEY = "headlinelist";
+	public static final String HEADLINELISTKEY = "headlinelist";  // redis
 
 	List<HeadLine> getHeadLineList(HeadLine headLineCondition);
 
