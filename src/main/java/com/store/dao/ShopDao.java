@@ -7,14 +7,16 @@ import java.util.List;
 
 public interface ShopDao {
     int insertShop(Shop shop);
+
     int updateShop(Shop shop);
+
     Shop queryByShopId(long shopId);
 
     /**
      * Query shop by shopName, enableStatus, and owner
      * Note that when there are more than 1 parameter, use @Param
      * @param shopCondition
-     * @param rowIndex from which row
+     * @param rowIndex from which row to fetch data (from db)
      * @param pageSize the number of rows
      * @return
      */

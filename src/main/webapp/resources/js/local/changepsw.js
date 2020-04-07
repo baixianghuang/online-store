@@ -28,7 +28,7 @@ $(function() {
 			return;
 		}
 		formData.append("verificationCodeActual", verificationCodeActual);
-		// 将参数post到后台去修改密码
+		// 将参数post到后台去Change password
 		$.ajax({
 			url : url,
 			type : 'POST',

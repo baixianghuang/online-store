@@ -2,7 +2,7 @@ $(function() {
 	var awardName = '';
 	getList();
 	function getList() {
-		// 获取积分兑换记录的URL
+		// 获取积分Redeem log的URL
 		var listUrl = '/online_store/shopadmin/listuserawardmapsbyshop?pageIndex=1&pageSize=9999&awardName='
 				+ awardName;
 		$.getJSON(listUrl, function(data) {

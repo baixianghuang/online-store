@@ -6,6 +6,7 @@ $(function() {
 		if (data.success) {
 			var headLineList = data.headLineList;
 			var swiperHtml = '';
+			// append the path of banner image
 			headLineList.map(function(item, index) {
 				swiperHtml += '' + '<div class="swiper-slide img-wrap">'
 						+ '<a href="' + item.lineLink

@@ -2,12 +2,12 @@ $(function() {
 	var loading = false;
 	var maxItems = 20;
 	var pageSize = 10;
-	// 获取顾客消费记录列表的URL
+	// 获取顾客Purchase log列表的URL
 	var listUrl = '/online_store/frontend/listuserproductmapsbycustomer';
 	var pageNum = 1;
 	var productName = '';
 	addItems(pageSize, pageNum);
-	// 按照查询条件获取消费记录列表，并生成对应的HTML元素添加到页面中
+	// 按照查询条件获取Purchase log列表，并生成对应的HTML元素添加到页面中
 	function addItems(pageSize, pageIndex) {
 		// 生成新条目的HTML
 		var url = listUrl + '?pageIndex=' + pageIndex + '&pageSize=' + pageSize

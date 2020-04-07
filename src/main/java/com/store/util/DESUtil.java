@@ -37,7 +37,6 @@ public class DESUtil {
 			byte[] doFinal = cipher.doFinal(bytes);
 			return base64encoder.encode(doFinal);
 		} catch (Exception e) {
-			// TODO: handle exception
 			throw new RuntimeException(e);
 		}
 	}
@@ -52,7 +51,6 @@ public class DESUtil {
 			byte[] doFinal = cipher.doFinal(bytes);
 			return new String(doFinal, CHARSETNAME);
 		} catch (Exception e) {
-			// TODO: handle exception
 			throw new RuntimeException(e);
 		}
 	}
@@ -60,10 +58,8 @@ public class DESUtil {
 	public static void main(String[] args) {
 		System.out.println(getEncryptString("root"));
 		System.out.println(getDecryptString(getEncryptString("root")));
-		System.out.println(getEncryptString("230230"));
 		System.out.println(getEncryptString("wxd7f6c5b8899fba83"));
 		System.out.println(getEncryptString("665ae80dba31fc91ab6191e7da4d676d"));
-		System.out.println(getEncryptString("WTF"));
 	}
 
 }

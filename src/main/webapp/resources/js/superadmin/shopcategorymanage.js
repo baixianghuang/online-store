@@ -2,6 +2,7 @@ $(function() {
 	initializePage();
 	listShopCategoryManagementInfo();
 });
+
 function listShopCategoryManagementInfo() {
 	$.ajax({
 		url : "listshopcategorys",
@@ -12,6 +13,7 @@ function listShopCategoryManagementInfo() {
 		}
 	});
 }
+
 function initializePage() {
 	// 加载表格数据
 	ajaxTable();

@@ -8,7 +8,7 @@ $(function() {
 	var pageNum = 1;
 	var awardName = '';
 	addItems(pageSize, pageNum);
-	// 按照查询条件获取奖品兑换记录列表，并生成对应的HTML元素添加到页面中
+	// 按照查询条件获取奖品Redeem log列表，并生成对应的HTML元素添加到页面中
 	function addItems(pageSize, pageIndex) {
 		// 生成新条目的HTML
 		var url = listUrl + '?pageIndex=' + pageIndex + '&pageSize=' + pageSize
