@@ -1,11 +1,9 @@
 package com.store.enums;
 
-/**
- * 使用枚举表述常量数据字典
- */
 public enum PersonInfoStateEnum {
 
-	SUCCESS(0, "创建成功"), INNER_ERROR(-1001, "操作失败"), EMPTY(-1002, "用户信息为空");
+	SUCCESS(0, "创建成功"), INNER_ERROR(-1001, "操作失败"),
+	NULL_PERSON_INFO(-1002, "用户信息为空"), ALLOW(1, "允许"), NOT_ALLOW(-1, "不允许");
 
 	private int state;
 

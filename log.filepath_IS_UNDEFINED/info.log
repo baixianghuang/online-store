@@ -1,24 +1,30 @@
-2020-03-31 11:36:41.454 [main] DEBUG com.store.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.owner_id = ? AND s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id ORDER BY s.priority DESC LIMIT ?, ? 
-2020-03-31 11:36:41.512 [main] DEBUG com.store.dao.ShopDao.queryShopList - ==> Parameters: 15(Long), 0(Integer), 5(Integer)
-2020-03-31 11:36:41.527 [main] DEBUG com.store.dao.ShopDao.queryShopList - <==      Total: 0
-2020-03-31 11:36:41.533 [main] DEBUG com.store.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.owner_id = ? AND s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id 
-2020-03-31 11:36:41.534 [main] DEBUG com.store.dao.ShopDao.queryShopCount - ==> Parameters: 15(Long)
-2020-03-31 11:36:41.536 [main] DEBUG com.store.dao.ShopDao.queryShopCount - <==      Total: 1
-2020-03-31 11:46:01.021 [main] DEBUG com.store.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.owner_id = ? AND s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id ORDER BY s.priority DESC LIMIT ?, ? 
-2020-03-31 11:46:01.062 [main] DEBUG com.store.dao.ShopDao.queryShopList - ==> Parameters: 8(Long), 0(Integer), 5(Integer)
-2020-03-31 11:46:01.099 [main] DEBUG com.store.dao.ShopDao.queryShopList - <==      Total: 5
-2020-03-31 11:46:01.104 [main] DEBUG com.store.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.owner_id = ? AND s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id 
-2020-03-31 11:46:01.105 [main] DEBUG com.store.dao.ShopDao.queryShopCount - ==> Parameters: 8(Long)
-2020-03-31 11:46:01.108 [main] DEBUG com.store.dao.ShopDao.queryShopCount - <==      Total: 1
-2020-03-31 15:45:37.893 [main] DEBUG com.store.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.owner_id = ? AND s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id ORDER BY s.priority DESC LIMIT ?, ? 
-2020-03-31 15:45:37.951 [main] DEBUG com.store.dao.ShopDao.queryShopList - ==> Parameters: 8(Long), 0(Integer), 5(Integer)
-2020-03-31 15:45:38.011 [main] DEBUG com.store.dao.ShopDao.queryShopList - <==      Total: 5
-2020-03-31 15:45:38.017 [main] DEBUG com.store.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.owner_id = ? AND s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id 
-2020-03-31 15:45:38.018 [main] DEBUG com.store.dao.ShopDao.queryShopCount - ==> Parameters: 8(Long)
-2020-03-31 15:45:38.022 [main] DEBUG com.store.dao.ShopDao.queryShopCount - <==      Total: 1
-2020-03-31 15:46:56.481 [main] DEBUG com.store.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.owner_id = ? AND s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id ORDER BY s.priority DESC LIMIT ?, ? 
-2020-03-31 15:46:56.522 [main] DEBUG com.store.dao.ShopDao.queryShopList - ==> Parameters: 8(Long), 0(Integer), 99(Integer)
-2020-03-31 15:46:56.546 [main] DEBUG com.store.dao.ShopDao.queryShopList - <==      Total: 13
-2020-03-31 15:46:56.552 [main] DEBUG com.store.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.owner_id = ? AND s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id 
-2020-03-31 15:46:56.553 [main] DEBUG com.store.dao.ShopDao.queryShopCount - ==> Parameters: 8(Long)
-2020-03-31 15:46:56.555 [main] DEBUG com.store.dao.ShopDao.queryShopCount - <==      Total: 1
+2020-04-15 06:59:55.520 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - ==>  Preparing: SELECT l.local_auth_id, l.username, l.password, l.create_time, l.last_edit_time, p.user_id, p.name, p.gender, p.email, p.user_type, p.create_time, p.last_edit_time, p.enable_status FROM tb_local_auth l LEFT JOIN tb_person_info p ON l.local_auth_id = p.local_auth_id WHERE l.username = ? AND l.password = ? 
+2020-04-15 06:59:55.608 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - ==> Parameters: admin1(String), y62qsby6e560l52ss09626qs0lse629s(String)
+2020-04-15 06:59:55.670 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - <==      Total: 0
+2020-04-15 07:01:08.230 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - ==>  Preparing: SELECT l.local_auth_id, l.username, l.password, l.create_time, l.last_edit_time, p.user_id, p.name, p.gender, p.email, p.user_type, p.create_time, p.last_edit_time, p.enable_status FROM tb_local_auth l LEFT JOIN tb_person_info p ON l.local_auth_id = p.local_auth_id WHERE l.username = ? AND l.password = ? 
+2020-04-15 07:01:08.250 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - ==> Parameters: admin1(String), y62qsby6e560l52ss09626qs0lse629s(String)
+2020-04-15 07:01:08.311 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - <==      Total: 0
+2020-04-15 07:06:03.455 [main] DEBUG com.store.dao.LocalAuthDao.insertLocalAuth - ==>  Preparing: INSERT INTO tb_local_auth(username,password,create_time,last_edit_time) VALUES (?,?,?,?) 
+2020-04-15 07:06:03.483 [main] DEBUG com.store.dao.LocalAuthDao.insertLocalAuth - ==> Parameters: admin1(String), y62qsby6e560l52ss09626qs0lse629s(String), 2020-04-15 07:06:03.414(Timestamp), null
+2020-04-15 07:06:03.580 [main] DEBUG com.store.dao.LocalAuthDao.insertLocalAuth - <==    Updates: 1
+2020-04-15 07:08:49.472 [main] DEBUG com.store.dao.LocalAuthDao.queryLocalByUsername - ==>  Preparing: SELECT l.local_auth_id, l.username, l.password, l.create_time, l.last_edit_time FROM tb_local_auth l LEFT JOIN tb_person_info p ON l.local_auth_id = p.local_auth_id WHERE l.username = ? AND p.enable_status = 1 
+2020-04-15 07:08:49.505 [main] DEBUG com.store.dao.LocalAuthDao.queryLocalByUsername - ==> Parameters: admin1(String)
+2020-04-15 07:08:49.589 [main] DEBUG com.store.dao.LocalAuthDao.queryLocalByUsername - <==      Total: 1
+2020-04-15 07:15:29.705 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - ==>  Preparing: SELECT l.local_auth_id, l.username, l.password, l.create_time, l.last_edit_time, p.user_id, p.name, p.gender, p.email, p.user_type, p.create_time, p.last_edit_time, p.enable_status FROM tb_local_auth l LEFT JOIN tb_person_info p ON l.local_auth_id = p.local_auth_id WHERE l.username = ? AND l.password = ? 
+2020-04-15 07:15:29.725 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - ==> Parameters: admin1(String), y62qsby6e560l52ss09626qs0lse629s(String)
+2020-04-15 07:15:29.787 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - <==      Total: 0
+2020-04-15 07:16:38.430 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - ==>  Preparing: SELECT l.local_auth_id, l.username, l.password, l.create_time, l.last_edit_time, p.user_id, p.name, p.gender, p.email, p.user_type, p.create_time, p.last_edit_time, p.enable_status FROM tb_local_auth l LEFT JOIN tb_person_info p ON l.local_auth_id = p.local_auth_id WHERE l.username = ? AND l.password = ? 
+2020-04-15 07:16:38.456 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - ==> Parameters: admin1(String), 666666(String)
+2020-04-15 07:16:38.526 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - <==      Total: 1
+2020-04-15 07:17:39.005 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - ==>  Preparing: SELECT l.local_auth_id, l.username, l.password, l.create_time, l.last_edit_time, p.user_id, p.name, p.gender, p.email, p.user_type, p.create_time, p.last_edit_time, p.enable_status FROM tb_local_auth l LEFT JOIN tb_person_info p ON l.local_auth_id = p.local_auth_id WHERE l.username = ? AND l.password = ? 
+2020-04-15 07:17:39.060 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - ==> Parameters: admin1(String), 666666(String)
+2020-04-15 07:17:39.140 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - <==      Total: 1
+2020-04-15 14:37:49.883 [main] DEBUG com.store.dao.LocalAuthDao.updateLocalAuth - ==>  Preparing: update tb_local_auth SET password=?, last_edit_time=? where username=? AND password=? 
+2020-04-15 14:37:49.934 [main] DEBUG com.store.dao.LocalAuthDao.updateLocalAuth - ==> Parameters: e66662250900l2y6555se60sss69559q(String), 2020-04-15 14:37:48.901(Timestamp), admin1(String), y62qsby6e560l52ss09626qs0lse629s(String)
+2020-04-15 14:37:50.037 [main] DEBUG com.store.dao.LocalAuthDao.updateLocalAuth - <==    Updates: 0
+2020-04-15 14:45:49.914 [main] DEBUG com.store.dao.LocalAuthDao.updateLocalAuth - ==>  Preparing: update tb_local_auth SET password=?, last_edit_time=? where username=? AND password=? 
+2020-04-15 14:45:49.937 [main] DEBUG com.store.dao.LocalAuthDao.updateLocalAuth - ==> Parameters: 654321(String), 2020-04-15 14:45:48.976(Timestamp), admin1(String), 666666(String)
+2020-04-15 14:45:50.037 [main] DEBUG com.store.dao.LocalAuthDao.updateLocalAuth - <==    Updates: 1
+2020-04-15 14:46:06.458 [main] DEBUG com.store.dao.LocalAuthDao.updateLocalAuth - ==>  Preparing: update tb_local_auth SET password=?, last_edit_time=? where username=? AND password=? 
+2020-04-15 14:46:06.477 [main] DEBUG com.store.dao.LocalAuthDao.updateLocalAuth - ==> Parameters: 666666(String), 2020-04-15 14:46:05.464(Timestamp), admin1(String), 666666(String)
+2020-04-15 14:46:06.578 [main] DEBUG com.store.dao.LocalAuthDao.updateLocalAuth - <==    Updates: 0

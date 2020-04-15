@@ -1,6 +1,6 @@
 /**
  * obtain data from back end
- * get the information obtained form web front and send them to back end (ajax)
+ * get the information obtained form web frontend and send them to back end (ajax)
  */
 $(function() {
 	// Get shopId from url using reg exp

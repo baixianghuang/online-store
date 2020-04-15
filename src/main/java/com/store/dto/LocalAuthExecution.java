@@ -4,12 +4,11 @@ import java.util.List;
 
 import com.store.entity.LocalAuth;
 import com.store.enums.LocalAuthStateEnum;
+import com.store.enums.OperationStateEnum;
 
 public class LocalAuthExecution {
-	// 结果状态
 	private int state;
 
-	// 状态标识
 	private String stateInfo;
 
 	private int count;
@@ -28,15 +27,14 @@ public class LocalAuthExecution {
 	}
 
 	// 成功的构造器
-	public LocalAuthExecution(LocalAuthStateEnum stateEnum, LocalAuth localAuth) {
+	public LocalAuthExecution(OperationStateEnum stateEnum, LocalAuth localAuth) {
 		this.state = stateEnum.getState();
 		this.stateInfo = stateEnum.getStateInfo();
 		this.localAuth = localAuth;
 	}
 
 	// 成功的构造器
-	public LocalAuthExecution(LocalAuthStateEnum stateEnum,
-			List<LocalAuth> localAuthList) {
+	public LocalAuthExecution(OperationStateEnum stateEnum, List<LocalAuth> localAuthList) {
 		this.state = stateEnum.getState();
 		this.stateInfo = stateEnum.getStateInfo();
 		this.localAuthList = localAuthList;

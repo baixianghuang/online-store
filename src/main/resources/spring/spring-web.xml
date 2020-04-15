@@ -28,12 +28,34 @@
         <property name="maxInMemorySize" value="16777216"/>
     </bean>
 
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                    <property name="supportedMediaTypes">
+                        <list>
+                            <value>text/html;charset=UTF-8</value>
+                        </list>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+    <context:component-scan base-package="com.store.web" />
 <!--    <mvc:interceptors>-->
+        <!-- 校验是否已登录了店家管理系统的拦截器 -->
 <!--        <mvc:interceptor>-->
-<!--            <mvc:mapping path="/search"/>-->
-<!--&lt;!&ndash;            exclude path to be intercepted&ndash;&gt;-->
-<!--            <mvc:exclude-mapping path="/updatepwd"/>-->
-<!--            <bean class="com.java.core.LoginInterceptor"/>-->
+<!--            <mvc:mapping path="/shopadmin/**"/>-->
+<!--            <bean id="ShopLoginInterceptor" class="com.store.interceptor.shopadmin.ShopLoginInterceptor" />-->
+<!--        </mvc:interceptor>-->
+
+<!--        &lt;!&ndash; 校验是否对该店铺有操作权限的拦截器&ndash;&gt;-->
+<!--        <mvc:interceptor>-->
+<!--&lt;!&ndash;            <mvc:mapping path="/shopadmin/shopoperation"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <mvc:mapping path="/shopadmin/productmanagement"/>&ndash;&gt;-->
+<!--            <mvc:mapping path="/shopadmin/productcategorymanagement"/>-->
+<!--            <bean id="ShopPermissionInterceptor" class="com.store.interceptor.shopadmin.ShopPermissionInterceptor" />-->
 <!--        </mvc:interceptor>-->
 <!--    </mvc:interceptors>-->
 </beans>

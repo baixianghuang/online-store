@@ -21,11 +21,8 @@ $(function () {
                 function (data) {
                     if (data.success) {
                         var shop = data.shop;
-                        $('#shop-cover-pic').attr('src',
-                            getContextPath() + shop.shopImg);
-                        $('#shop-update-time').html(
-                            new Date(shop.lastEditTime)
-                                .Format("yyyy-MM-dd"));
+                        $('#shop-cover-pic').attr('src', getContextPath() + shop.shopImg);
+                        $('#shop-update-time').html( new Date(shop.lastEditTime).Format("yyyy-MM-dd"));
                         $('#shop-name').html(shop.shopName);
                         $('#shop-desc').html(shop.shopDesc);
                         $('#shop-addr').html(shop.shopAddr);

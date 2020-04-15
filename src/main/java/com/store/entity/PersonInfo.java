@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class PersonInfo {
 	private Long userId;
+	private Long localAuthId;  // for login function
 	private String name;
 	private String profileImg;
 	private String email;
@@ -19,6 +20,14 @@ public class PersonInfo {
 
 	public void setUserId(Long userId) {
 		this.userId = userId;
+	}
+
+	public Long getLocalAuthId() {
+		return localAuthId;
+	}
+
+	public void setLocalAuthId(Long localAuthId) {
+		this.localAuthId = localAuthId;
 	}
 
 	public String getName() {

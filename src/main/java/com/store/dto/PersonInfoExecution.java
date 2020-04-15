@@ -3,6 +3,7 @@ package com.store.dto;
 import java.util.List;
 
 import com.store.entity.PersonInfo;
+import com.store.enums.OperationStateEnum;
 import com.store.enums.PersonInfoStateEnum;
 
 /**
@@ -34,15 +35,20 @@ public class PersonInfoExecution {
 		this.stateInfo = stateEnum.getStateInfo();
 	}
 
+	public PersonInfoExecution(OperationStateEnum stateEnum) {
+		this.state = stateEnum.getState();
+		this.stateInfo = stateEnum.getStateInfo();
+	}
+
 	// 成功的构造器
-	public PersonInfoExecution(PersonInfoStateEnum stateEnum, PersonInfo personInfo) {
+	public PersonInfoExecution(OperationStateEnum stateEnum, PersonInfo personInfo) {
 		this.state = stateEnum.getState();
 		this.stateInfo = stateEnum.getStateInfo();
 		this.personInfo = personInfo;
 	}
 
 	// 成功的构造器
-	public PersonInfoExecution(PersonInfoStateEnum stateEnum, List<PersonInfo> personInfoList) {
+	public PersonInfoExecution(OperationStateEnum stateEnum, List<PersonInfo> personInfoList) {
 		this.state = stateEnum.getState();
 		this.stateInfo = stateEnum.getStateInfo();
 		this.personInfoList = personInfoList;

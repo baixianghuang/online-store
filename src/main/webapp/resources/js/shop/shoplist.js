@@ -13,6 +13,7 @@ $(function() {
 			}
 		});
 	}
+
 	function handleUser(data) {
 		$('#user-name').text(data.name);
 	}
@@ -47,4 +48,26 @@ $(function() {
 			return '';
 		}
 	}
+
+	$('#change-pwd').click(function() {
+		window.location.href = '/online_store/admin/changepwd?userType=back';
+	});
+
+	$('#log-out').click(function () {
+		$.ajax({
+			url : "/online_store/user/logout",
+			type : "post",
+			contentType : false,
+			processData : false,
+			cache : false,
+			success : function(data) {
+				if (data.success) {
+					window.location.href = '/online_store/admin/login?userType=back';
+				}
+			},
+			error : function(data, error) {
+				alert(error);
+			}
+		});
+	});
 });
