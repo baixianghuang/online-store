@@ -1,30 +1,36 @@
-2020-04-15 06:59:55.520 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - ==>  Preparing: SELECT l.local_auth_id, l.username, l.password, l.create_time, l.last_edit_time, p.user_id, p.name, p.gender, p.email, p.user_type, p.create_time, p.last_edit_time, p.enable_status FROM tb_local_auth l LEFT JOIN tb_person_info p ON l.local_auth_id = p.local_auth_id WHERE l.username = ? AND l.password = ? 
-2020-04-15 06:59:55.608 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - ==> Parameters: admin1(String), y62qsby6e560l52ss09626qs0lse629s(String)
-2020-04-15 06:59:55.670 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - <==      Total: 0
-2020-04-15 07:01:08.230 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - ==>  Preparing: SELECT l.local_auth_id, l.username, l.password, l.create_time, l.last_edit_time, p.user_id, p.name, p.gender, p.email, p.user_type, p.create_time, p.last_edit_time, p.enable_status FROM tb_local_auth l LEFT JOIN tb_person_info p ON l.local_auth_id = p.local_auth_id WHERE l.username = ? AND l.password = ? 
-2020-04-15 07:01:08.250 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - ==> Parameters: admin1(String), y62qsby6e560l52ss09626qs0lse629s(String)
-2020-04-15 07:01:08.311 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - <==      Total: 0
-2020-04-15 07:06:03.455 [main] DEBUG com.store.dao.LocalAuthDao.insertLocalAuth - ==>  Preparing: INSERT INTO tb_local_auth(username,password,create_time,last_edit_time) VALUES (?,?,?,?) 
-2020-04-15 07:06:03.483 [main] DEBUG com.store.dao.LocalAuthDao.insertLocalAuth - ==> Parameters: admin1(String), y62qsby6e560l52ss09626qs0lse629s(String), 2020-04-15 07:06:03.414(Timestamp), null
-2020-04-15 07:06:03.580 [main] DEBUG com.store.dao.LocalAuthDao.insertLocalAuth - <==    Updates: 1
-2020-04-15 07:08:49.472 [main] DEBUG com.store.dao.LocalAuthDao.queryLocalByUsername - ==>  Preparing: SELECT l.local_auth_id, l.username, l.password, l.create_time, l.last_edit_time FROM tb_local_auth l LEFT JOIN tb_person_info p ON l.local_auth_id = p.local_auth_id WHERE l.username = ? AND p.enable_status = 1 
-2020-04-15 07:08:49.505 [main] DEBUG com.store.dao.LocalAuthDao.queryLocalByUsername - ==> Parameters: admin1(String)
-2020-04-15 07:08:49.589 [main] DEBUG com.store.dao.LocalAuthDao.queryLocalByUsername - <==      Total: 1
-2020-04-15 07:15:29.705 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - ==>  Preparing: SELECT l.local_auth_id, l.username, l.password, l.create_time, l.last_edit_time, p.user_id, p.name, p.gender, p.email, p.user_type, p.create_time, p.last_edit_time, p.enable_status FROM tb_local_auth l LEFT JOIN tb_person_info p ON l.local_auth_id = p.local_auth_id WHERE l.username = ? AND l.password = ? 
-2020-04-15 07:15:29.725 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - ==> Parameters: admin1(String), y62qsby6e560l52ss09626qs0lse629s(String)
-2020-04-15 07:15:29.787 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - <==      Total: 0
-2020-04-15 07:16:38.430 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - ==>  Preparing: SELECT l.local_auth_id, l.username, l.password, l.create_time, l.last_edit_time, p.user_id, p.name, p.gender, p.email, p.user_type, p.create_time, p.last_edit_time, p.enable_status FROM tb_local_auth l LEFT JOIN tb_person_info p ON l.local_auth_id = p.local_auth_id WHERE l.username = ? AND l.password = ? 
-2020-04-15 07:16:38.456 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - ==> Parameters: admin1(String), 666666(String)
-2020-04-15 07:16:38.526 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - <==      Total: 1
-2020-04-15 07:17:39.005 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - ==>  Preparing: SELECT l.local_auth_id, l.username, l.password, l.create_time, l.last_edit_time, p.user_id, p.name, p.gender, p.email, p.user_type, p.create_time, p.last_edit_time, p.enable_status FROM tb_local_auth l LEFT JOIN tb_person_info p ON l.local_auth_id = p.local_auth_id WHERE l.username = ? AND l.password = ? 
-2020-04-15 07:17:39.060 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - ==> Parameters: admin1(String), 666666(String)
-2020-04-15 07:17:39.140 [main] DEBUG c.s.dao.LocalAuthDao.queryLocalByUsernameAndPwd - <==      Total: 1
-2020-04-15 14:37:49.883 [main] DEBUG com.store.dao.LocalAuthDao.updateLocalAuth - ==>  Preparing: update tb_local_auth SET password=?, last_edit_time=? where username=? AND password=? 
-2020-04-15 14:37:49.934 [main] DEBUG com.store.dao.LocalAuthDao.updateLocalAuth - ==> Parameters: e66662250900l2y6555se60sss69559q(String), 2020-04-15 14:37:48.901(Timestamp), admin1(String), y62qsby6e560l52ss09626qs0lse629s(String)
-2020-04-15 14:37:50.037 [main] DEBUG com.store.dao.LocalAuthDao.updateLocalAuth - <==    Updates: 0
-2020-04-15 14:45:49.914 [main] DEBUG com.store.dao.LocalAuthDao.updateLocalAuth - ==>  Preparing: update tb_local_auth SET password=?, last_edit_time=? where username=? AND password=? 
-2020-04-15 14:45:49.937 [main] DEBUG com.store.dao.LocalAuthDao.updateLocalAuth - ==> Parameters: 654321(String), 2020-04-15 14:45:48.976(Timestamp), admin1(String), 666666(String)
-2020-04-15 14:45:50.037 [main] DEBUG com.store.dao.LocalAuthDao.updateLocalAuth - <==    Updates: 1
-2020-04-15 14:46:06.458 [main] DEBUG com.store.dao.LocalAuthDao.updateLocalAuth - ==>  Preparing: update tb_local_auth SET password=?, last_edit_time=? where username=? AND password=? 
-2020-04-15 14:46:06.477 [main] DEBUG com.store.dao.LocalAuthDao.updateLocalAuth - ==> Parameters: 666666(String), 2020-04-15 14:46:05.464(Timestamp), admin1(String), 666666(String)
-2020-04-15 14:46:06.578 [main] DEBUG com.store.dao.LocalAuthDao.updateLocalAuth - <==    Updates: 0
+2020-04-16 09:29:36.348 [main] DEBUG com.store.dao.HeadLineDao.insertHeadLine - ==>  Preparing: INSERT INTO tb_head_line(line_name,line_link,line_img,priority,enable_status,create_time,last_edit_time) VALUES ?,?,?,?,?,?,?) 
+2020-04-16 09:29:36.378 [main] DEBUG com.store.dao.HeadLineDao.insertHeadLine - ==> Parameters: head1(String), link1(String), \upload\images\item\headLine\2020041609293476448.jpg(String), 1(Integer), 1(Integer), 2020-04-16 09:29:34.838(Timestamp), null
+2020-04-16 09:33:23.540 [main] DEBUG com.store.dao.HeadLineDao.insertHeadLine - ==>  Preparing: INSERT INTO tb_head_line(line_name,line_link,line_img,priority,enable_status,create_time,last_edit_time) VALUES ?,?,?,?,?,?,?) 
+2020-04-16 09:33:23.575 [main] DEBUG com.store.dao.HeadLineDao.insertHeadLine - ==> Parameters: head1(String), link1(String), \upload\images\item\headLine\2020041609332234101.jpg(String), 1(Integer), 1(Integer), 2020-04-16 09:33:22.432(Timestamp), 2020-04-16 09:33:22.432(Timestamp)
+2020-04-16 09:43:36.942 [main] DEBUG com.store.dao.HeadLineDao.insertHeadLine - ==>  Preparing: INSERT INTO tb_head_line(line_name,line_link,line_img,priority,enable_status,create_time,last_edit_time) VALUES ?,?,?,?,?,?,?) 
+2020-04-16 09:43:36.971 [main] DEBUG com.store.dao.HeadLineDao.insertHeadLine - ==> Parameters: head1(String), link1(String), \upload\images\item\headLine\2020041609433559081.jpg(String), 1(Integer), 1(Integer), 2020-04-16 09:43:35.812(Timestamp), 2020-04-16 09:43:35.812(Timestamp)
+2020-04-16 09:44:17.641 [main] DEBUG com.store.dao.HeadLineDao.insertHeadLine - ==>  Preparing: INSERT INTO tb_head_line(line_name,line_link,line_img,priority,enable_status,create_time,last_edit_time) VALUES (?,?,?,?,?,?,?) 
+2020-04-16 09:44:17.667 [main] DEBUG com.store.dao.HeadLineDao.insertHeadLine - ==> Parameters: head1(String), link1(String), \upload\images\item\headLine\2020041609441673163.jpg(String), 1(Integer), 1(Integer), 2020-04-16 09:44:16.605(Timestamp), 2020-04-16 09:44:16.605(Timestamp)
+2020-04-16 09:44:17.771 [main] DEBUG com.store.dao.HeadLineDao.insertHeadLine - <==    Updates: 1
+2020-04-16 09:47:08.810 [main] DEBUG com.store.dao.HeadLineDao.insertHeadLine - ==>  Preparing: INSERT INTO tb_head_line(line_name,line_link,line_img,priority,enable_status,create_time,last_edit_time) VALUES (?,?,?,?,?,?,?) 
+2020-04-16 09:47:08.839 [main] DEBUG com.store.dao.HeadLineDao.insertHeadLine - ==> Parameters: head2(String), link2(String), \upload\images\item\headline\202004160947731239.jpg(String), 1(Integer), 1(Integer), 2020-04-16 09:47:07.714(Timestamp), 2020-04-16 09:47:07.714(Timestamp)
+2020-04-16 09:47:08.945 [main] DEBUG com.store.dao.HeadLineDao.insertHeadLine - <==    Updates: 1
+2020-04-16 10:06:29.769 [main] DEBUG com.store.dao.HeadLineDao.insertHeadLine - ==>  Preparing: INSERT INTO tb_head_line(line_name,line_link,line_img,priority,enable_status,create_time,last_edit_time) VALUES (?,?,?,?,?,?,?) 
+2020-04-16 10:06:29.794 [main] DEBUG com.store.dao.HeadLineDao.insertHeadLine - ==> Parameters: head2(String), link2(String), \upload\images\item\headline\2020041610062861877.jpg(String), 1(Integer), 1(Integer), 2020-04-16 10:06:28.616(Timestamp), 2020-04-16 10:06:28.616(Timestamp)
+2020-04-16 10:06:29.904 [main] DEBUG com.store.dao.HeadLineDao.insertHeadLine - <==    Updates: 1
+2020-04-16 10:06:50.989 [main] DEBUG com.store.dao.HeadLineDao.insertHeadLine - ==>  Preparing: INSERT INTO tb_head_line(line_name,line_link,line_img,priority,enable_status,create_time,last_edit_time) VALUES (?,?,?,?,?,?,?) 
+2020-04-16 10:06:51.030 [main] DEBUG com.store.dao.HeadLineDao.insertHeadLine - ==> Parameters: head1(String), link1(String), \upload\images\item\headline\2020041610064998492.jpg(String), 2(Integer), 1(Integer), 2020-04-16 10:06:49.911(Timestamp), 2020-04-16 10:06:49.911(Timestamp)
+2020-04-16 10:06:51.151 [main] DEBUG com.store.dao.HeadLineDao.insertHeadLine - <==    Updates: 1
+2020-04-16 10:07:42.928 [main] DEBUG com.store.dao.HeadLineDao.insertHeadLine - ==>  Preparing: INSERT INTO tb_head_line(line_name,line_link,line_img,priority,enable_status,create_time,last_edit_time) VALUES (?,?,?,?,?,?,?) 
+2020-04-16 10:07:42.955 [main] DEBUG com.store.dao.HeadLineDao.insertHeadLine - ==> Parameters: head3(String), link3(String), \upload\images\item\headline\2020041610074142909.jpg(String), 2(Integer), 1(Integer), 2020-04-16 10:07:41.819(Timestamp), 2020-04-16 10:07:41.819(Timestamp)
+2020-04-16 10:07:43.056 [main] DEBUG com.store.dao.HeadLineDao.insertHeadLine - <==    Updates: 1
+2020-04-16 10:07:56.481 [main] DEBUG com.store.dao.HeadLineDao.insertHeadLine - ==>  Preparing: INSERT INTO tb_head_line(line_name,line_link,line_img,priority,enable_status,create_time,last_edit_time) VALUES (?,?,?,?,?,?,?) 
+2020-04-16 10:07:56.513 [main] DEBUG com.store.dao.HeadLineDao.insertHeadLine - ==> Parameters: head4(String), link4(String), \upload\images\item\headline\2020041610075577330.jpg(String), 4(Integer), 1(Integer), 2020-04-16 10:07:55.351(Timestamp), 2020-04-16 10:07:55.351(Timestamp)
+2020-04-16 10:07:56.616 [main] DEBUG com.store.dao.HeadLineDao.insertHeadLine - <==    Updates: 1
+2020-04-16 10:09:18.301 [main] DEBUG com.store.dao.HeadLineDao.queryHeadLine - ==>  Preparing: SELECT line_id, line_name, line_link, line_img, priority, enable_status, create_time, last_edit_time FROM tb_head_line ORDER BY priority DESC 
+2020-04-16 10:09:18.320 [main] DEBUG com.store.dao.HeadLineDao.queryHeadLine - ==> Parameters: 
+2020-04-16 10:09:18.411 [main] DEBUG com.store.dao.HeadLineDao.queryHeadLine - <==      Total: 6
+2020-04-16 10:47:45.671 [main] DEBUG com.store.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id is not null ORDER BY priority DESC 
+2020-04-16 10:47:45.700 [main] DEBUG com.store.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2020-04-16 10:47:45.788 [main] DEBUG com.store.dao.ShopCategoryDao.queryShopCategory - <==      Total: 13
+2020-04-16 11:05:31.061 [main] DEBUG com.store.dao.ShopCategoryDao.insertShopCategory - ==>  Preparing: INSERT INTO tb_shop_category(shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id) VALUES (?,?,?, ?,?,?,?) 
+2020-04-16 11:05:31.107 [main] DEBUG com.store.dao.ShopCategoryDao.insertShopCategory - ==> Parameters: Used keyboard(String), Second-hand keyboard(String), \upload\images\item\shopcategory\2020041611052956545.png(String), 2(Integer), 2020-04-16 11:05:29.662(Timestamp), null, 10(Long)
+2020-04-16 11:05:31.228 [main] DEBUG com.store.dao.ShopCategoryDao.insertShopCategory - <==    Updates: 1
+2020-04-16 15:02:09.164 [main] DEBUG com.store.dao.ShopCategoryDao.insertShopCategory - ==>  Preparing: INSERT INTO tb_shop_category(shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id) VALUES (?,?,?, ?,?,?,?) 
+2020-04-16 15:02:09.207 [main] DEBUG com.store.dao.ShopCategoryDao.insertShopCategory - ==> Parameters: Used keyboard(String), Second-hand keyboard(String), \upload\images\item\shopcategory\202004161502773170.png(String), 2(Integer), 2020-04-16 15:02:07.542(Timestamp), null, 10(Long)
+2020-04-16 15:02:09.331 [main] DEBUG com.store.dao.ShopCategoryDao.insertShopCategory - <==    Updates: 1

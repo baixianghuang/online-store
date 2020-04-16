@@ -7,12 +7,8 @@ $(function () {
             function (data) {
                 if (data.success) {
                     var product = data.product;
-                    $('#product-img').attr('src', getContextPath() + product.imgAddr);
-                    $('#product-time').text(
-                        new Date(product.lastEditTime) .Format("yyyy-MM-dd"));
-                    if (product.point != undefined) {
-                        $('#product-point').text('Purchase to get ' + product.point + ' point');
-                    }
+                    $('#product-img').attr('src', product.imgAddr);  // getContextPath() +
+                    $('#product-time').text(new Date(product.lastEditTime) .Format("yyyy-MM-dd"));
                     $('#product-name').text(product.productName);
                     $('#product-desc').text(product.productDesc);
                     if (product.normalPrice != undefined && product.promotionPrice != undefined) {
@@ -29,8 +25,9 @@ $(function () {
 
                     var imgListHtml = '';
                     product.productImgList.map(function (item, index) {
-                        imgListHtml += '<div> <img src="'
-                            + getContextPath() + item.imgAddr + '" width="100%" /></div>';
+                        imgListHtml += '<div> ' +
+                            '<img src="' + item.imgAddr + '" width="100%" />' + //  getContextPath()
+                            '</div>';
                     });
                     // if (data.needQRCode) {
                     //     imgListHtml += '<div><a href="/online_store/frontend/adduserproductmap?productId='

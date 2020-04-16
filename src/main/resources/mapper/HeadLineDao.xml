@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper
-    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.store.dao.HeadLineDao">
 	<select id="queryHeadLine" resultType="com.store.entity.HeadLine">
 		SELECT
@@ -32,10 +30,8 @@
 		enable_status,
 		create_time,
 		last_edit_time
-		FROM
-		tb_head_line
-		WHERE
-		line_id = #{lineId}
+		FROM tb_head_line
+		WHERE line_id = #{lineId}
 	</select>
 	<select id="queryHeadLineByIds" resultType="com.store.entity.HeadLine"
 		parameterType="long">
@@ -48,20 +44,17 @@
 		enable_status,
 		create_time,
 		last_edit_time
-		FROM
-		tb_head_line
+		FROM tb_head_line
 		WHERE line_id IN
-		<foreach collection="list" item="lineId" open="(" separator=","
-			close=")">
+		<foreach collection="list" item="lineId" open="(" separator="," close=")">
 			#{lineId}
 		</foreach>
 	</select>
 
-	<insert id="insertHeadLine" useGeneratedKeys="true" keyProperty="lineId"
-		keyColumn="line_id">
-		INSERT INTO
-		tb_head_line(line_name,line_link,line_img,priority,enable_status,create_time,last_edit_time)
-		VALUES #{lineName},#{lineLink},#{lineImg},#{priority},#{enableStatus},#{createTime},#{lastEditTime})
+	<insert id="insertHeadLine" useGeneratedKeys="true" parameterType="com.store.entity.HeadLine"
+			keyProperty="lineId" keyColumn="line_id">
+		INSERT INTO tb_head_line(line_name,line_link,line_img,priority,enable_status,create_time,last_edit_time)
+		VALUES (#{lineName},#{lineLink},#{lineImg},#{priority},#{enableStatus},#{createTime},#{lastEditTime})
 	</insert>
 
 	<update id="updateHeadLine" parameterType="com.store.entity.HeadLine">
@@ -77,15 +70,11 @@
 		where line_id=#{lineId}
 	</update>
 	<delete id="deleteHeadLine">
-		DELETE FROM
-		tb_head_line
-		WHERE
-		line_id =
-		#{lineId}
+		DELETE FROM tb_head_line
+		WHERE line_id = #{lineId}
 	</delete>
 	<delete id="batchDeleteHeadLine" parameterType="long">
-		DELETE FROM
-		tb_head_line
+		DELETE FROM tb_head_line
 		WHERE line_id IN
 		<foreach collection="list" item="lineId" open="(" separator="," close=")">
 			#{lineId}

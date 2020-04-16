@@ -12,6 +12,7 @@ $(function () {
                 productList.map(function (item, index) {
                     var textOp = "Off shelf";
                     var contraryStatus = 0;
+                    //TODO onshelf function not correct?
                     if (item.enableStatus == 0) {
                         // 0 represents off shelf
                         textOp = "On shelf";

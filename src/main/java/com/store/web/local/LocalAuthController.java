@@ -108,9 +108,10 @@ public class LocalAuthController {
 				// 账号允许登录
 				if (localAuth.getPersonInfo().getEnableStatus().equals(PersonInfoStateEnum.ALLOW.getState())) {
 					// 后台店家或管理员允许登录
+					System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+localAuth.getPersonInfo().getUserType());
 					if (StringUtils.isNotEmpty(userType) && userType.equals("back")) {
 						request.getSession().setAttribute("user", localAuth.getPersonInfo());
-						if (StringUtils.isEmpty(userType) && !localAuth.getPersonInfo().getUserType().equals(1)) {
+						if (localAuth.getPersonInfo().getUserType() != 1) {  // StringUtils.isEmpty(userType) &&
 							modelMap.put("success", true);
 						} else {
 							// 没有店家和管理员权限则登录前台

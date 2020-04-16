@@ -6,6 +6,7 @@ $(function () {
         if (data.success) {
             var headLineList = data.headLineList;
             var swiperHtml = '';
+            // append the path of banner headline image
             headLineList.map(function (item, index) {
                 swiperHtml += ''
                     + '<div class="swiper-slide img-wrap">'
@@ -17,7 +18,7 @@ $(function () {
                 autoplay: 1000,
                 autoplayDisableOnInteraction: false
             });
-            // append the path of banner image
+
             // headLineList.map(function(item, index) {
             // 	swiperHtml += '' + '<div class="swiper-slide img-wrap">'
             // 			+ '<a href="' + item.lineLink
@@ -31,7 +32,7 @@ $(function () {
             // 	autoplayDisableOnInteraction : false
             // });
 
-			// get shopCategoryList
+			// get shopCategoryList, getContextPath() is unnecessary in path
             var shopCategoryList = data.shopCategoryList;
             var categoryHtml = '';
             shopCategoryList.map(function (item, index) {
@@ -42,11 +43,13 @@ $(function () {
 					+ 	'<p class="shop-desc">'+ item.shopCategoryDesc + '</p>'
                     + '</div>'
                     + '<div class="shop-classify-img-warp">'
-                    + 	'<img class="shop-img" src="' + getContextPath() + item.shopCategoryImg + '">'
+                    + 	'<img class="shop-img" src="' + item.shopCategoryImg + '">'
                     + '</div>'
 					+ '</div>';
             });
             $('.row').html(categoryHtml);
+        } else {
+            alert(data.errMsg);
         }
     });
 

@@ -24,7 +24,7 @@ public class LocalAuthServiceImpl implements LocalAuthService {
 //	TODO: encrypt pwd
 	@Override
 	public LocalAuth getLocalAuthByUsernameAndPwd(String username, String password) {
-		return localAuthDao.queryLocalByUsernameAndPwd(username, password);  // MD5.getMd5(password)
+		return localAuthDao.queryLocalByUsernameAndPwd(username, MD5.getMd5(password));  // MD5.getMd5(password)
 	}
 
 	@Override
@@ -45,7 +45,7 @@ public class LocalAuthServiceImpl implements LocalAuthService {
 		}
 		// 保存数据
 		localAuth.setCreateTime(new Date());
-		localAuth.setPassword(localAuth.getPassword());  // MD5.getMd5(localAuth.getPassword()))
+		localAuth.setPassword(MD5.getMd5(localAuth.getPassword()));  // MD5.getMd5(localAuth.getPassword()))
 		try {
 			int effectedNum = localAuthDao.insertLocalAuth(localAuth);
 			if (effectedNum <= 0) {
@@ -65,7 +65,7 @@ public class LocalAuthServiceImpl implements LocalAuthService {
 				&& StringUtils.isNotBlank(newPassword)) {
 			try {
 				// MD5.getMd5(password), MD5.getMd5(newPassword)
-				int effectedNum = localAuthDao.updateLocalAuth(username, password, newPassword,
+				int effectedNum = localAuthDao.updateLocalAuth(username, MD5.getMd5(password), MD5.getMd5(newPassword),
 						new Date());
 				if (effectedNum <= 0) {
 					return new LocalAuthExecution(LocalAuthStateEnum.ERROR_UPDATE);

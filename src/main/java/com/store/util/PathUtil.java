@@ -9,7 +9,7 @@ public class PathUtil {
         if (os.toLowerCase().startsWith("win")) {
             basePath="G:/OverallWorkspace/online-store-proj";
         } else {
-            basePath="/home/online-store-proj";
+            basePath="/home/bai/online_store";
         }
         basePath = basePath.replace("/", separator);
         return basePath;
@@ -21,7 +21,7 @@ public class PathUtil {
     }
 
     public static String getHeadLineImagePath() {
-        String imagePath = "/upload/images/item/headLine/";
+        String imagePath = "/upload/images/item/headline/";
         return imagePath.replace("/", separator);
     }
 
